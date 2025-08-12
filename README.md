@@ -1,4 +1,4 @@
-# wanderlink
+# template
 
 A new Flutter project.
 

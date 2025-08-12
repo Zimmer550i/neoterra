@@ -1,7 +1,7 @@
-import 'package:wanderlink/utils/app_colors.dart';
-import 'package:wanderlink/utils/app_icons.dart';
-import 'package:wanderlink/utils/app_texts.dart';
-import 'package:wanderlink/views/base/custom_button.dart';
+import 'package:template/utils/app_colors.dart';
+import 'package:template/utils/app_icons.dart';
+import 'package:template/utils/app_texts.dart';
+import 'package:template/views/base/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 

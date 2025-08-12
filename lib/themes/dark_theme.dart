@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wanderlink/utils/app_colors.dart';
+import 'package:template/utils/app_colors.dart';
 
 ThemeData dark() => ThemeData(
   fontFamily: "Sen",

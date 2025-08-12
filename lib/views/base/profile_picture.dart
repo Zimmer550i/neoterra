@@ -1,11 +1,11 @@
 import 'dart:io';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:wanderlink/utils/app_colors.dart';
-import 'package:wanderlink/utils/app_icons.dart';
+import 'package:template/utils/app_colors.dart';
+import 'package:template/utils/app_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:wanderlink/utils/custom_image_picker.dart';
-import 'package:wanderlink/utils/custom_svg.dart';
+import 'package:template/utils/custom_image_picker.dart';
+import 'package:template/utils/custom_svg.dart';
 
 class ProfilePicture extends StatelessWidget {
   final double size;

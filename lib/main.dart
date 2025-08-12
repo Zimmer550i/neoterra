@@ -1,11 +1,11 @@
-import 'package:wanderlink/themes/light_theme.dart';
-import 'package:wanderlink/utils/app_colors.dart';
-import 'package:wanderlink/utils/app_constants.dart';
-import 'package:wanderlink/utils/message.dart';
+import 'package:template/themes/light_theme.dart';
+import 'package:template/utils/app_colors.dart';
+import 'package:template/utils/app_constants.dart';
+import 'package:template/utils/message.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:wanderlink/views/screens/design_system.dart';
+import 'package:template/views/screens/design_system.dart';
 import 'controllers/localization_controller.dart';
 import 'controllers/theme_controller.dart';
 import 'helpers/di.dart' as di;
