@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:template/utils/app_colors.dart';
+import 'package:neoterra/utils/app_colors.dart';
 
 class PullToRefresh extends StatefulWidget {
   final Widget child;
@@ -73,12 +73,12 @@ class PullToRefreshState extends State<PullToRefresh> {
                   height: iconSize,
                   width: iconSize,
                   decoration: BoxDecoration(
-                    color: AppColors.blue[400],
+                    color: AppColors.cyan[400],
                     shape: BoxShape.circle,
                     boxShadow: [
                       BoxShadow(
                         offset: Offset(0, 2),
-                        color: AppColors.blue[800]!.withAlpha(100),
+                        color: AppColors.cyan[800]!.withAlpha(100),
                         spreadRadius: 2,
                         blurRadius: 5,
                       ),

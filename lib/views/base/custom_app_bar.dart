@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:template/utils/app_colors.dart';
-import 'package:template/utils/app_icons.dart';
-import 'package:template/utils/app_texts.dart';
-import 'package:template/utils/custom_svg.dart';
+import 'package:neoterra/utils/app_colors.dart';
+import 'package:neoterra/utils/app_icons.dart';
+import 'package:neoterra/utils/app_texts.dart';
+import 'package:neoterra/utils/custom_svg.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
@@ -16,14 +16,14 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: AppColors.black[600],
+      backgroundColor: AppColors.charcoal,
       automaticallyImplyLeading: false,
       titleSpacing: 0,
       title: SizedBox(
-        height: 44,
+        height: 64,
         child: Row(
           children: [
-            SizedBox(width: 12),
+            SizedBox(width: 14),
             InkWell(
               onTap: () => hasLeading ? Get.back() : null,
               borderRadius: BorderRadius.circular(8),
@@ -35,20 +35,26 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                     : const SizedBox(),
               ),
             ),
-            const SizedBox(width: 18),
-            Text(
-              title,
-              style: AppTexts.tsmr.copyWith(color: AppColors.black[50]),
+            const SizedBox(width: 12),
+            Expanded(
+              child: Text(
+                title,
+                textAlign: TextAlign.center,
+                style: AppTexts.tmds,
+              ),
             ),
+            const SizedBox(width: 12),
+            const SizedBox(width: 32),
+            const SizedBox(width: 14),
           ],
         ),
       ),
       bottom: PreferredSize(
-        preferredSize: Size.fromHeight(0.5),
+        preferredSize: Size.fromHeight(1),
         child: Container(
-          height: 0.5,
+          height: 1,
           width: double.infinity,
-          color: AppColors.black.shade300,
+          color: AppColors.gray.shade600,
         ),
       ),
     );

@@ -1,11 +1,11 @@
-import 'package:template/themes/light_theme.dart';
-import 'package:template/utils/app_colors.dart';
-import 'package:template/utils/app_constants.dart';
-import 'package:template/utils/message.dart';
+import 'package:neoterra/themes/dark_theme.dart';
+import 'package:neoterra/utils/app_colors.dart';
+import 'package:neoterra/utils/app_constants.dart';
+import 'package:neoterra/utils/message.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:template/views/screens/design_system.dart';
+import 'package:neoterra/views/screens/design_system.dart';
 import 'controllers/localization_controller.dart';
 import 'controllers/theme_controller.dart';
 import 'helpers/di.dart' as di;
@@ -16,7 +16,7 @@ void main() async {
   Map<String, Map<String, String>> languages = await di.init();
   SystemChrome.setSystemUIOverlayStyle(
     SystemUiOverlayStyle(
-      statusBarColor: AppColors.black[600],
+      statusBarColor: AppColors.gray[600],
       statusBarIconBrightness: Brightness.light,
     ),
   );
@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
               title: AppConstants.APP_NAME,
               debugShowCheckedModeBanner: false,
               // theme: themeController.darkTheme ? dark() : light(),
-              theme: light(),
+              theme: dark(),
               defaultTransition: Transition.cupertino,
               locale: localizeController.locale,
               translations: Messages(languages: languages),

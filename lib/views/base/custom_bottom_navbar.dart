@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:template/utils/app_colors.dart';
-import 'package:template/utils/app_icons.dart';
-import 'package:template/utils/app_texts.dart';
-import 'package:template/utils/custom_svg.dart';
+import 'package:neoterra/utils/app_colors.dart';
+import 'package:neoterra/utils/app_icons.dart';
+import 'package:neoterra/utils/app_texts.dart';
+import 'package:neoterra/utils/custom_svg.dart';
 
 class CustomBottomNavbar extends StatelessWidget {
   final int index;
@@ -51,13 +51,13 @@ class CustomBottomNavbar extends StatelessWidget {
             CustomSvg(
               asset: icon,
               size: 24,
-              color: isSelected ? AppColors.blue : AppColors.black.shade100,
+              color: isSelected ? AppColors.cyan : AppColors.gray.shade100,
             ),
             const SizedBox(height: 5),
             Text(
               name,
               style: AppTexts.tsmm.copyWith(
-                color: isSelected ? AppColors.blue : AppColors.black.shade100,
+                color: isSelected ? AppColors.cyan : AppColors.gray.shade100,
               ),
             ),
           ],

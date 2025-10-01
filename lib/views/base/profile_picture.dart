@@ -1,11 +1,11 @@
 import 'dart:io';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:template/utils/app_colors.dart';
-import 'package:template/utils/app_icons.dart';
+import 'package:neoterra/utils/app_colors.dart';
+import 'package:neoterra/utils/app_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:template/utils/custom_image_picker.dart';
-import 'package:template/utils/custom_svg.dart';
+import 'package:neoterra/utils/custom_image_picker.dart';
+import 'package:neoterra/utils/custom_svg.dart';
 
 class ProfilePicture extends StatelessWidget {
   final double size;
@@ -63,7 +63,7 @@ class ProfilePicture extends StatelessWidget {
                           child: CircularProgressIndicator(
                             value: progress.progress,
                             strokeWidth: 2,
-                            color: AppColors.blue[400],
+                            color: AppColors.cyan[400],
                           ),
                         ),
                       );
@@ -72,8 +72,8 @@ class ProfilePicture extends StatelessWidget {
                       return Container(
                         width: size,
                         height: size,
-                        color: AppColors.blue[100],
-                        child: Icon(Icons.error, color: Colors.blue),
+                        color: AppColors.cyan[100],
+                        child: Icon(Icons.error, color: Colors.cyan),
                       );
                     },
                     width: size,
@@ -86,13 +86,13 @@ class ProfilePicture extends StatelessWidget {
                     padding: EdgeInsets.all(size * 0.17),
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      border: Border.all(color: AppColors.blue[300]!),
+                      border: Border.all(color: AppColors.cyan[300]!),
                     ),
                     child: Center(
                       child: SvgPicture.asset(
                         AppIcons.bell,
                         colorFilter: ColorFilter.mode(
-                          AppColors.blue[400]!,
+                          AppColors.cyan[400]!,
                           BlendMode.srcIn,
                         ),
                       ),
@@ -109,7 +109,7 @@ class ProfilePicture extends StatelessWidget {
                   height: 32,
                   width: 32,
                   decoration: BoxDecoration(
-                    color: AppColors.blue,
+                    color: AppColors.cyan,
                     shape: BoxShape.circle,
                   ),
                   padding: EdgeInsets.all(8),

@@ -1,7 +1,7 @@
-import 'package:template/utils/app_colors.dart';
-import 'package:template/utils/app_icons.dart';
-import 'package:template/utils/app_texts.dart';
-import 'package:template/views/base/custom_button.dart';
+import 'package:neoterra/utils/app_colors.dart';
+import 'package:neoterra/utils/app_icons.dart';
+import 'package:neoterra/utils/app_texts.dart';
+import 'package:neoterra/views/base/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -50,9 +50,9 @@ class SubscriptionWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: AppColors.black.shade400,
+        color: AppColors.gray.shade400,
         borderRadius: BorderRadius.circular(16),
-        border: isPurchased ? Border.all(color: AppColors.blue) : null,
+        border: isPurchased ? Border.all(color: AppColors.cyan) : null,
       ),
       child: Column(
         children: [
@@ -65,7 +65,7 @@ class SubscriptionWidget extends StatelessWidget {
                   height: 50,
                   width: 50,
                   decoration: BoxDecoration(
-                    color: AppColors.blue,
+                    color: AppColors.cyan,
                     borderRadius: BorderRadius.circular(16),
                   ),
                   child: Center(child: SvgPicture.asset(icon)),
@@ -77,14 +77,14 @@ class SubscriptionWidget extends StatelessWidget {
                       title,
                       style: AppTexts.tlgm.copyWith(
                         color: isPremium
-                            ? AppColors.black[50]
-                            : AppColors.black.shade200,
+                            ? AppColors.gray[50]
+                            : AppColors.gray.shade200,
                       ),
                     ),
                     Text(
                       subTitle,
                       style: AppTexts.tlgm.copyWith(
-                        color: isPremium ? AppColors.blue : AppColors.black[50],
+                        color: isPremium ? AppColors.cyan : AppColors.gray[50],
                       ),
                     ),
                   ],
@@ -92,7 +92,7 @@ class SubscriptionWidget extends StatelessWidget {
               ],
             ),
           ),
-          Container(height: 0.5, width: double.infinity, color: AppColors.blue),
+          Container(height: 0.5, width: double.infinity, color: AppColors.cyan),
           const SizedBox(height: 20),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 35),
@@ -102,7 +102,7 @@ class SubscriptionWidget extends StatelessWidget {
               children: [
                 Text(
                   "Features",
-                  style: AppTexts.tmdm.copyWith(color: AppColors.black[50]),
+                  style: AppTexts.tmdm.copyWith(color: AppColors.gray[50]),
                 ),
                 ...pros.map((e) {
                   return Row(
@@ -112,7 +112,7 @@ class SubscriptionWidget extends StatelessWidget {
                       Text(
                         e,
                         style: AppTexts.tmdm.copyWith(
-                          color: AppColors.black[100],
+                          color: AppColors.gray[100],
                         ),
                       ),
                     ],
@@ -126,7 +126,7 @@ class SubscriptionWidget extends StatelessWidget {
                       Text(
                         e,
                         style: AppTexts.tmdm.copyWith(
-                          color: AppColors.black[100],
+                          color: AppColors.gray[100],
                         ),
                       ),
                     ],

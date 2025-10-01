@@ -1,8 +1,8 @@
-import 'package:template/utils/app_colors.dart';
-import 'package:template/utils/app_icons.dart';
+import 'package:neoterra/utils/app_colors.dart';
+import 'package:neoterra/utils/app_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:template/utils/app_texts.dart';
+import 'package:neoterra/utils/app_texts.dart';
 
 class CustomDropDown extends StatefulWidget {
   final String? title;
@@ -54,7 +54,7 @@ class _CustomDropDownState extends State<CustomDropDown> {
             style: TextStyle(
               fontVariations: [FontVariation("wght", 600)],
               fontSize: 16,
-              color: AppColors.blue[600],
+              color: AppColors.cyan[600],
             ),
           ),
 
@@ -67,7 +67,7 @@ class _CustomDropDownState extends State<CustomDropDown> {
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 8),
             decoration: BoxDecoration(
-              color: AppColors.black[400],
+              color: AppColors.gray[400],
               borderRadius: BorderRadius.circular(widget.radius),
             ),
             child: Column(
@@ -81,13 +81,13 @@ class _CustomDropDownState extends State<CustomDropDown> {
                           ? Text(
                               widget.hintText ?? "Select One",
                               style: AppTexts.tsmr.copyWith(
-                                color: AppColors.black.shade200,
+                                color: AppColors.gray.shade200,
                               ),
                             )
                           : Text(
                               currentVal!,
                               style: AppTexts.tsmr.copyWith(
-                                color: AppColors.black.shade50,
+                                color: AppColors.gray.shade50,
                               ),
                             ),
                       const Spacer(),
@@ -121,7 +121,7 @@ class _CustomDropDownState extends State<CustomDropDown> {
                                   decoration: BoxDecoration(
                                     border: Border(
                                       top: BorderSide(
-                                        color: AppColors.blue[400]!,
+                                        color: AppColors.cyan[400]!,
                                         width: 0.5,
                                       ),
                                     ),
@@ -131,7 +131,7 @@ class _CustomDropDownState extends State<CustomDropDown> {
                                     child: Text(
                                       e,
                                       style: TextStyle(
-                                        color: AppColors.blue[50],
+                                        color: AppColors.cyan[50],
                                         fontSize: 14,
                                       ),
                                     ),

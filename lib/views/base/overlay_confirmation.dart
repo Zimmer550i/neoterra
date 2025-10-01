@@ -1,5 +1,5 @@
-import 'package:template/utils/app_colors.dart';
-import 'package:template/views/base/custom_button.dart';
+import 'package:neoterra/utils/app_colors.dart';
+import 'package:neoterra/views/base/custom_button.dart';
 import 'package:flutter/material.dart';
 
 class OverlayConfirmation extends StatelessWidget {
@@ -28,7 +28,7 @@ class OverlayConfirmation extends StatelessWidget {
       insetPadding: EdgeInsets.symmetric(horizontal: 16),
       contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 28),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-      backgroundColor: AppColors.blue[50],
+      backgroundColor: AppColors.cyan[50],
       content: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
@@ -47,7 +47,7 @@ class OverlayConfirmation extends StatelessWidget {
             Text(
               highlight!,
               style: TextStyle(
-                color: AppColors.blue,
+                color: AppColors.cyan,
                 fontSize: 20,
                 fontVariations: [FontVariation("wght", 600)],
               ),
