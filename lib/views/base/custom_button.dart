@@ -74,7 +74,7 @@ class _CustomButtonState extends State<CustomButton> {
             : Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 mainAxisSize: MainAxisSize.min,
-                spacing: 8,
+                spacing: 4,
                 children: [
                   if (widget.leading != null)
                     SvgPicture.asset(
@@ -101,9 +101,7 @@ class _CustomButtonState extends State<CustomButton> {
                       height: widget.iconSize,
                       width: widget.iconSize,
                       colorFilter: ColorFilter.mode(
-                        widget.isSecondary
-                            ? AppColors.cyan
-                            : AppColors.cyan.shade900,
+                        widget.isSecondary ? AppColors.cyan : Colors.white,
                         BlendMode.srcIn,
                       ),
                     ),
