@@ -4,7 +4,7 @@ import 'package:neoterra/utils/message.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:neoterra/views/screens/auth/splash.dart';
+import 'package:neoterra/views/screens/splash/splash.dart';
 import 'controllers/localization_controller.dart';
 import 'controllers/theme_controller.dart';
 import 'helpers/di.dart' as di;

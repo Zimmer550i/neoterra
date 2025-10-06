@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:neoterra/utils/app_texts.dart';
 import 'package:neoterra/views/base/custom_button.dart';
+import 'package:neoterra/views/screens/splash/find_your_vibes.dart';
 
 class UserSplash extends StatelessWidget {
   const UserSplash({super.key});
@@ -44,6 +46,9 @@ class UserSplash extends StatelessWidget {
                   ),
                   const SizedBox(height: 32),
                   CustomButton(
+                    onTap: () {
+                      Get.to(() => FindYourVibes());
+                    },
                     text: "Get Started",
                     trailing: "assets/icons/arrow_right.svg",
                   ),

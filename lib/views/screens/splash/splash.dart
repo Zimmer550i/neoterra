@@ -5,7 +5,7 @@ import 'package:neoterra/utils/app_texts.dart';
 import 'package:neoterra/utils/custom_svg.dart';
 // import 'package:neoterra/views/screens/auth/organizer_splash.dart';
 // import 'package:neoterra/views/screens/auth/professional_splash.dart';
-import 'package:neoterra/views/screens/auth/user_splash.dart';
+import 'package:neoterra/views/screens/splash/user_splash.dart';
 
 class Splash extends StatelessWidget {
   const Splash({super.key});
@@ -18,12 +18,32 @@ class Splash extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      precacheImage(AssetImage("assets/images/user_splash.jpg"), context);
-      precacheImage(AssetImage("assets/images/organizer_splash.jpg"), context);
-      precacheImage(
-        AssetImage("assets/images/professional_splash.jpg"),
-        context,
-      );
+      final imageList = [
+      "assets/images/user_splash.jpg",
+      "assets/images/organizer_splash.jpg",
+      "assets/images/professional_splash.jpg",
+      "assets/images/culturecreativityncommunity.jpg",
+      "assets/images/culturecreativityncommunity_logo.png",
+      "assets/images/daypartiesnsocialvibes.jpg",
+      "assets/images/daypartiesnsocialvibes_logo.png",
+      "assets/images/globalsounds.jpg",
+      "assets/images/globalsounds_logo.png",
+      "assets/images/hiphop.jpg",
+      "assets/images/hiphop_logo.png",
+      "assets/images/housendance.jpg",
+      "assets/images/housendance_logo.png",
+      "assets/images/inclusiveevents.jpg",
+      "assets/images/inclusiveevents_logo.png",
+      "assets/images/rnb.jpg",
+      "assets/images/rnb_logo.png",
+      "assets/images/wellness.jpg",
+      "assets/images/wellness_logo.png",
+    ];
+
+    for (final imagePath in imageList) {
+      precacheImage(AssetImage(imagePath), context);
+    }
+
       SystemChrome.setSystemUIOverlayStyle(
         SystemUiOverlayStyle(
           statusBarIconBrightness: Brightness.light,
