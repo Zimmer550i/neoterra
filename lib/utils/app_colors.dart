@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 
 class AppColors {
   static Color mint = Color(0xff3F9E9D);
-  static Color coral = Color(0xff3F9E9D);
+  static Color coral = Color(0xffE17A63);
   static Color charcoal = Color(0xff0E0E12);
   static Color card = Color(0xff282830);
+  static Color secondaryText = Color(0xffC4C4C4);
 
   static MaterialColor cyan = MaterialColor(
     0xFF40EDFB, // primary color (500)

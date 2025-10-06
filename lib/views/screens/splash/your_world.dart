@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:neoterra/models/vibe.dart';
 import 'package:neoterra/utils/app_colors.dart';
 import 'package:neoterra/views/base/custom_button.dart';
-import 'package:neoterra/views/screens/auth/login.dart';
+import 'package:neoterra/views/screens/auth/signup.dart';
 
 class YourWorld extends StatefulWidget {
   final List<Vibe> vibes;
@@ -119,7 +119,7 @@ class _YourWorldState extends State<YourWorld> {
                 children: [
                   CustomButton(
                     onTap: () {
-                      Get.to(() => Login());
+                      Get.to(() => Signup());
                     },
                     text: "Explore Neoterra",
                   ),
