@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:neoterra/utils/app_colors.dart';
-import 'package:neoterra/utils/app_icons.dart';
 import 'package:neoterra/utils/app_texts.dart';
 import 'package:neoterra/utils/custom_svg.dart';
 
@@ -11,57 +10,41 @@ class CustomBottomNavbar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      decoration: BoxDecoration(
-        border: Border(top: BorderSide(color: Color(0xff333333))),
-        borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
-        boxShadow: [
-          BoxShadow(
-            offset: Offset(0, 2),
-            blurRadius: 16,
-            color: Colors.black.withAlpha(27),
+    return Theme(
+      data: Theme.of(context).copyWith(canvasColor: AppColors.secondaryBg),
+      child: BottomNavigationBar(
+        onTap: onChanged,
+        currentIndex: index,
+        selectedLabelStyle: AppTexts.txss.copyWith(color: AppColors.mint),
+        selectedItemColor: AppColors.mint,
+        showSelectedLabels: true,
+        items: [
+          BottomNavigationBarItem(
+            icon: CustomSvg(asset: "assets/icons/home.svg"),
+            activeIcon: CustomSvg(asset: "assets/icons/home_active.svg"),
+            label: "Home",
+          ),
+          BottomNavigationBarItem(
+            icon: CustomSvg(asset: "assets/icons/search.svg"),
+            activeIcon: CustomSvg(asset: "assets/icons/search_active.svg"),
+            label: "Explore",
+          ),
+          BottomNavigationBarItem(
+            icon: CustomSvg(asset: "assets/icons/role_switch.svg"),
+            activeIcon: CustomSvg(asset: "assets/icons/role_switch_active.svg"),
+            label: "",
+          ),
+          BottomNavigationBarItem(
+            icon: CustomSvg(asset: "assets/icons/tickets.svg"),
+            activeIcon: CustomSvg(asset: "assets/icons/tickets_active.svg"),
+            label: "Tickets",
+          ),
+          BottomNavigationBarItem(
+            icon: CustomSvg(asset: "assets/icons/profile.svg"),
+            activeIcon: CustomSvg(asset: "assets/icons/profile_active.svg"),
+            label: "Profile",
           ),
         ],
-      ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 10),
-        child: Row(
-          children: [
-            item("Home", AppIcons.home, 0),
-            item("Pool", AppIcons.pool, 1),
-            item("Settings", AppIcons.settings, 2),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget item(String name, String icon, int pos) {
-    bool isSelected = pos == index;
-
-    return Expanded(
-      child: GestureDetector(
-        onTap: () {
-          if (onChanged != null) onChanged!(pos);
-        },
-        behavior: HitTestBehavior.translucent,
-        child: Column(
-          children: [
-            CustomSvg(
-              asset: icon,
-              size: 24,
-              color: isSelected ? AppColors.cyan : AppColors.gray.shade100,
-            ),
-            const SizedBox(height: 5),
-            Text(
-              name,
-              style: AppTexts.tsmm.copyWith(
-                color: isSelected ? AppColors.cyan : AppColors.gray.shade100,
-              ),
-            ),
-          ],
-        ),
       ),
     );
   }

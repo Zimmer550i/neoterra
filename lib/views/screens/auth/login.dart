@@ -5,6 +5,7 @@ import 'package:neoterra/utils/app_texts.dart';
 import 'package:neoterra/utils/custom_svg.dart';
 import 'package:neoterra/views/base/custom_button.dart';
 import 'package:neoterra/views/base/custom_text_field.dart';
+import 'package:neoterra/views/screens/app/user_app.dart';
 import 'package:neoterra/views/screens/auth/forgot_password.dart';
 import 'package:neoterra/views/screens/splash/find_your_vibes.dart';
 
@@ -20,7 +21,9 @@ class _LoginState extends State<Login> {
   final pass = TextEditingController();
   String? loading;
 
-  void onSubmit() async {}
+  void onSubmit() async {
+    Get.to(() => UserApp());
+  }
 
   @override
   Widget build(BuildContext context) {

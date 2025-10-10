@@ -6,6 +6,7 @@ class AppColors {
   static Color charcoal = Color(0xff0E0E12);
   static Color card = Color(0xff282830);
   static Color secondaryText = Color(0xffC4C4C4);
+  static Color secondaryBg = Color(0xff1A1A22);
 
   static MaterialColor cyan = MaterialColor(
     0xFF40EDFB, // primary color (500)
