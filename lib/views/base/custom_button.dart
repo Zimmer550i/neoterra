@@ -51,12 +51,12 @@ class _CustomButtonState extends State<CustomButton> {
         padding: EdgeInsets.symmetric(horizontal: widget.padding),
         decoration: BoxDecoration(
           color: widget.isSecondary
-              ? AppColors.cyan[50]
+              ? null
               : widget.isDisabled
               ? AppColors.cyan.shade300
               : AppColors.mint,
           borderRadius: BorderRadius.circular(widget.radius),
-          border: widget.isSecondary ? Border.all(color: AppColors.cyan) : null,
+          border: widget.isSecondary ? Border.all(color: AppColors.mint) : null,
         ),
         child: widget.isLoading
             ? FittedBox(
@@ -92,7 +92,7 @@ class _CustomButtonState extends State<CustomButton> {
                     widget.text,
                     style: AppTexts.tlgs.copyWith(
                       fontSize: widget.fontSize,
-                      color: widget.isSecondary ? AppColors.gray : Colors.white,
+                      color: widget.isSecondary ? AppColors.mint : Colors.white,
                     ),
                   ),
                   if (widget.trailing != null)

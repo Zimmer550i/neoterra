@@ -18,7 +18,7 @@ class ProfilePicture extends StatelessWidget {
   const ProfilePicture({
     super.key,
     this.image,
-    this.size = 100,
+    this.size = 120,
     this.showLoading = true,
     this.isEditable = false,
     this.imagePickerCallback,
@@ -103,17 +103,20 @@ class ProfilePicture extends StatelessWidget {
             Positioned(
               left: 0,
               right: 0,
-              bottom: -12,
-              child: Center(
+              bottom: 0,
+              top: 0,
+              child: GestureDetector(
+                onTap: () {
+                  customImagePicker();
+                },
                 child: Container(
-                  height: 32,
-                  width: 32,
                   decoration: BoxDecoration(
-                    color: AppColors.cyan,
+                    color: Colors.black.withValues(alpha: 0.4),
                     shape: BoxShape.circle,
                   ),
-                  padding: EdgeInsets.all(8),
-                  child: CustomSvg(asset: AppIcons.edit, size: 16),
+                  child: Center(
+                    child: CustomSvg(asset: "assets/icons/camera.svg"),
+                  ),
                 ),
               ),
             ),
