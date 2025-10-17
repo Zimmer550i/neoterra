@@ -1,17 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:neoterra/utils/app_colors.dart';
 import 'package:neoterra/utils/app_texts.dart';
 import 'package:neoterra/utils/custom_svg.dart';
 import 'package:neoterra/views/base/custom_networked_image.dart';
+import 'package:neoterra/views/screens/common/party_details.dart';
+import 'package:neoterra/views/screens/common/qr.dart';
 
 class PartyCardCompact extends StatelessWidget {
   final int seed;
-  const PartyCardCompact({super.key, required this.seed});
+  final bool joined;
+  final bool ended;
+  const PartyCardCompact({
+    super.key,
+    required this.seed,
+    this.joined = false,
+    this.ended = false,
+  });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Get.to(() => PartyDetails());
+      },
       child: Container(
         padding: EdgeInsets.all(8),
         decoration: BoxDecoration(
@@ -88,11 +100,23 @@ class PartyCardCompact extends StatelessWidget {
                         ),
                       ),
                       Spacer(),
-                      Text(
-                        "\$150",
-                        textAlign: TextAlign.start,
-                        style: AppTexts.dxss,
-                      ),
+                      ended
+                          ? Container(height: 24,)
+                          : joined
+                          ? GestureDetector(
+                              onTap: () {
+                                Get.to(() => Qr());
+                              },
+                              child: CustomSvg(
+                                asset: "assets/icons/qr.svg",
+                                color: AppColors.mint,
+                              ),
+                            )
+                          : Text(
+                              "\$150",
+                              textAlign: TextAlign.start,
+                              style: AppTexts.dxss,
+                            ),
                     ],
                   ),
                 ],

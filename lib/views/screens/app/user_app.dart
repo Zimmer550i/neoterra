@@ -7,11 +7,13 @@ import 'package:neoterra/utils/show_confirmation.dart';
 import 'package:neoterra/views/base/custom_bottom_navbar.dart';
 import 'package:neoterra/views/base/home_bar.dart';
 import 'package:neoterra/views/screens/user/home/user_home.dart';
+import 'package:neoterra/views/screens/user/profile/profile_settings.dart';
 import 'package:neoterra/views/screens/user/profile/user_info.dart';
 import 'package:neoterra/views/screens/user/profile/user_customize_experience.dart';
 import 'package:neoterra/views/screens/user/profile/user_profile.dart';
 import 'package:neoterra/views/screens/user/profile/user_profile_information.dart';
 import 'package:neoterra/views/screens/user/role/user_change_role.dart';
+import 'package:neoterra/views/screens/user/tickets/user_tickets.dart';
 
 class UserApp extends StatefulWidget {
   const UserApp({super.key});
@@ -27,7 +29,7 @@ class _UserAppState extends State<UserApp> {
     UserHome(),
     FlutterLogo(),
     UserChangeRole(),
-    FlutterLogo(),
+    UserTickets(),
     UserProfile(isUser: true),
   ];
 
@@ -70,11 +72,9 @@ class _UserAppState extends State<UserApp> {
                     Get.to(() => UserProfileUserInformation());
                   },
                 ),
-                drawerButton(
-                  "assets/icons/user.svg",
-                  "Profile Settings",
-                  () {},
-                ),
+                drawerButton("assets/icons/user.svg", "Profile Settings", () {
+                  Get.to(() => ProfileSettings());
+                }),
                 drawerButton("assets/icons/terms.svg", "Terms of Services", () {
                   Get.to(
                     () => UserInfo(title: "Terms of Conditions", data: "data"),
