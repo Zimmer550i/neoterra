@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:neoterra/utils/app_colors.dart';
 import 'package:neoterra/utils/app_texts.dart';
 import 'package:neoterra/utils/custom_svg.dart';
 import 'package:neoterra/views/base/custom_networked_image.dart';
+import 'package:neoterra/views/screens/common/party_details.dart';
 
 class PartyCard extends StatelessWidget {
   final int seed;
@@ -11,7 +13,9 @@ class PartyCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Get.to(() => PartyDetails());
+      },
       child: ClipRRect(
         borderRadius: BorderRadiusGeometry.circular(24),
         child: Container(

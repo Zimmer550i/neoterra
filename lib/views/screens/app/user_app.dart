@@ -2,14 +2,16 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:neoterra/utils/app_colors.dart';
-import 'package:neoterra/utils/app_texts.dart';
 import 'package:neoterra/utils/custom_svg.dart';
+import 'package:neoterra/utils/show_confirmation.dart';
 import 'package:neoterra/views/base/custom_bottom_navbar.dart';
 import 'package:neoterra/views/base/home_bar.dart';
+import 'package:neoterra/views/screens/user/home/user_home.dart';
 import 'package:neoterra/views/screens/user/profile/user_info.dart';
 import 'package:neoterra/views/screens/user/profile/user_customize_experience.dart';
 import 'package:neoterra/views/screens/user/profile/user_profile.dart';
 import 'package:neoterra/views/screens/user/profile/user_profile_information.dart';
+import 'package:neoterra/views/screens/user/role/user_change_role.dart';
 
 class UserApp extends StatefulWidget {
   const UserApp({super.key});
@@ -21,7 +23,13 @@ class UserApp extends StatefulWidget {
 class _UserAppState extends State<UserApp> {
   int index = 0;
 
-  List<Widget> pages = [UserProfile(isUser: true)];
+  List<Widget> pages = [
+    UserHome(),
+    FlutterLogo(),
+    UserChangeRole(),
+    FlutterLogo(),
+    UserProfile(isUser: true),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -85,77 +93,17 @@ class _UserAppState extends State<UserApp> {
                   Get.to(() => UserInfo(title: "About Us", data: "data"));
                 }),
                 drawerButton("assets/icons/logout.svg", "Logout", () {
-                  showModalBottomSheet(
+                  showConfirmation(
                     context: context,
-                    builder: (context) {
-                      return Container(
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                          color: AppColors.card,
-                          borderRadius: BorderRadius.vertical(
-                            top: Radius.circular(8),
-                          ),
-                          border: Border(
-                            top: BorderSide(color: AppColors.gray.shade400),
-                          ),
-                        ),
-                        child: SafeArea(
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 20),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                const SizedBox(height: 24),
-                                Text("Logout", style: AppTexts.txls),
-                                const SizedBox(height: 16),
-                                Text(
-                                  "Are you sure toy want to logout?",
-                                  style: AppTexts.tlgm.copyWith(
-                                    color: AppColors.secondaryText,
-                                  ),
-                                ),
-                                const SizedBox(height: 32),
-                                Row(
-                                  children: [
-                                    Expanded(
-                                      child: Center(
-                                        child: Text(
-                                          "Yes, logout",
-                                          style: AppTexts.tmdr,
-                                        ),
-                                      ),
-                                    ),
-                                    Expanded(
-                                      child: Container(
-                                        padding: EdgeInsets.symmetric(
-                                          vertical: 13,
-                                          horizontal: 0,
-                                        ),
-                                        decoration: BoxDecoration(
-                                          border: Border.all(
-                                            color: AppColors.coral,
-                                          ),
-                                          borderRadius: BorderRadius.circular(
-                                            99,
-                                          ),
-                                        ),
-                                        child: Center(
-                                          child: Text(
-                                            "No",
-                                            style: AppTexts.tmds.copyWith(
-                                              color: AppColors.coral,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      );
+                    title: "Logout",
+                    description: "Are you sure toy want to logout?",
+                    confirmText: "Yes, logout",
+                    cancelText: "No",
+                    onConfirm: () {
+                      // Add logout logic here
+                    },
+                    onCancel: () {
+                      // Optional: add cancel logic here
                     },
                   );
                 }),

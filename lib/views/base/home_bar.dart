@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:neoterra/utils/app_colors.dart';
 import 'package:neoterra/utils/custom_svg.dart';
+import 'package:neoterra/views/screens/common/notifications.dart';
 
 class HomeBar extends StatelessWidget implements PreferredSizeWidget {
   final bool hasMoreOptions;
@@ -28,7 +29,9 @@ class HomeBar extends StatelessWidget implements PreferredSizeWidget {
                 if (hasMoreOptions) {
                   Get.context!.findRootAncestorStateOfType<ScaffoldState>();
                   Scaffold.of(context).openDrawer();
-                } else {}
+                } else {
+                  Get.to(() => Notifications());
+                }
               },
               child: Container(
                 width: 36,
