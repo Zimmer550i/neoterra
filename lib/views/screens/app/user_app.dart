@@ -6,6 +6,7 @@ import 'package:neoterra/utils/custom_svg.dart';
 import 'package:neoterra/utils/show_confirmation.dart';
 import 'package:neoterra/views/base/custom_bottom_navbar.dart';
 import 'package:neoterra/views/base/home_bar.dart';
+import 'package:neoterra/views/screens/user/explore/user_explore.dart';
 import 'package:neoterra/views/screens/user/home/user_home.dart';
 import 'package:neoterra/views/screens/user/profile/profile_settings.dart';
 import 'package:neoterra/views/screens/user/profile/user_info.dart';
@@ -27,7 +28,7 @@ class _UserAppState extends State<UserApp> {
 
   List<Widget> pages = [
     UserHome(),
-    FlutterLogo(),
+    UserExplore(),
     UserChangeRole(),
     UserTickets(),
     UserProfile(isUser: true),

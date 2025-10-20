@@ -82,9 +82,7 @@ class _CustomButtonState extends State<CustomButton> {
                       height: widget.iconSize,
                       width: widget.iconSize,
                       colorFilter: ColorFilter.mode(
-                        widget.isSecondary
-                            ? AppColors.mint
-                            : AppColors.cyan[25]!,
+                        AppColors.white,
                         BlendMode.srcIn,
                       ),
                     ),
@@ -92,7 +90,7 @@ class _CustomButtonState extends State<CustomButton> {
                     widget.text,
                     style: AppTexts.tlgs.copyWith(
                       fontSize: widget.fontSize,
-                      color: widget.isSecondary ? AppColors.mint : Colors.white,
+                      color: Colors.white,
                     ),
                   ),
                   if (widget.trailing != null)

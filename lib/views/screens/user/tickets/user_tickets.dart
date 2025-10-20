@@ -58,15 +58,24 @@ class _UserTicketsState extends State<UserTickets> {
             ],
           ),
           const SizedBox(height: 4),
-          for (int i = 0; i < 5; i++)
-            Padding(
-              padding: const EdgeInsets.only(top: 12),
-              child: PartyCardCompact(
-                seed: i,
-                joined: index == 0,
-                ended: index == 1,
+          Expanded(
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  for (int i = 0; i < 50; i++)
+                    Padding(
+                      padding: const EdgeInsets.only(top: 12),
+                      child: PartyCardCompact(
+                        seed: i,
+                        joined: index == 0,
+                        ended: index == 1,
+                      ),
+                    ),
+                  const SizedBox(height: 24),
+                ],
               ),
             ),
+          ),
         ],
       ),
     );

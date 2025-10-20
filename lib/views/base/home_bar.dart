@@ -16,6 +16,7 @@ class HomeBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       backgroundColor: AppColors.charcoal,
       automaticallyImplyLeading: false,
+      surfaceTintColor: Colors.transparent,
       titleSpacing: 0,
       title: SizedBox(
         height: 64,
