@@ -6,15 +6,13 @@ class CustomCalendar extends StatefulWidget {
   final bool isEditable;
   final bool multiDatePicker;
   final List<DateTime> selectedDates;
-  final Function(List<DateTime>)? onMultipleSelected;
-  final Function(DateTime)? onSigleDateSelected;
+  final Function(DateTime)? onDateSelected;
   const CustomCalendar({
     super.key,
     this.isEditable = false,
     this.multiDatePicker = true,
     this.selectedDates = const [],
-    this.onMultipleSelected,
-    this.onSigleDateSelected,
+    this.onDateSelected,
   });
 
   @override
@@ -156,23 +154,31 @@ class _CustomCalendarState extends State<CustomCalendar> {
   Widget dayWidget(DateTime day, bool isSelected) {
     final now = DateTime.now();
 
-    return Container(
-      decoration: BoxDecoration(
-        shape: isSelected ? BoxShape.circle : BoxShape.rectangle,
-        color: isSelected ? AppColors.card : null,
-        border:
-            (day.day == now.day &&
-                day.month == now.month &&
-                day.year == now.year)
-            ? Border.all(color: AppColors.mint, width: 2)
-            : null,
-      ),
-      child: Center(
-        child: Text(
-          day.day.toString(),
-          style: isSelected
-              ? AppTexts.tmds.copyWith(color: AppColors.mint)
-              : AppTexts.tmdr,
+    return InkWell(
+      onTap: () {
+        if (widget.onDateSelected != null) {
+          widget.onDateSelected!(day);
+        }
+      },
+      borderRadius: BorderRadius.circular(99),
+      child: Container(
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: isSelected ? AppColors.card : null,
+          border:
+              (day.day == now.day &&
+                  day.month == now.month &&
+                  day.year == now.year)
+              ? Border.all(color: AppColors.mint, width: 2)
+              : null,
+        ),
+        child: Center(
+          child: Text(
+            day.day.toString(),
+            style: isSelected
+                ? AppTexts.tmds.copyWith(color: AppColors.mint)
+                : AppTexts.tmdr,
+          ),
         ),
       ),
     );

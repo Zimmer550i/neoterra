@@ -13,8 +13,7 @@ showCustomCalendar(
         backgroundColor: Colors.transparent,
         insetPadding: EdgeInsets.all(40),
         child: CustomCalendar(
-          onMultipleSelected: onMultipleSelected,
-          onSigleDateSelected: onSigleDateSelected,
+          onDateSelected: onSigleDateSelected,
         ),
       );
     },

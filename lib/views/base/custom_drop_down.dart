@@ -1,8 +1,8 @@
 import 'package:neoterra/utils/app_colors.dart';
 import 'package:neoterra/utils/app_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:neoterra/utils/app_texts.dart';
+import 'package:neoterra/utils/custom_svg.dart';
 
 class CustomDropDown extends StatefulWidget {
   final String? title;
@@ -20,7 +20,7 @@ class CustomDropDown extends StatefulWidget {
     this.hintText,
     required this.options,
     this.onChanged,
-    this.radius = 24,
+    this.radius = 12,
     this.height,
     this.width,
   });
@@ -48,15 +48,7 @@ class _CustomDropDownState extends State<CustomDropDown> {
       crossAxisAlignment: CrossAxisAlignment.start,
       spacing: 8,
       children: [
-        if (widget.title != null)
-          Text(
-            widget.title!,
-            style: TextStyle(
-              fontVariations: [FontVariation("wght", 600)],
-              fontSize: 16,
-              color: AppColors.cyan[600],
-            ),
-          ),
+        if (widget.title != null) Text(widget.title!, style: AppTexts.tlgs),
 
         GestureDetector(
           onTap: () {
@@ -65,36 +57,37 @@ class _CustomDropDownState extends State<CustomDropDown> {
             });
           },
           child: Container(
+            constraints: BoxConstraints(minHeight: widget.height ?? 50),
             padding: EdgeInsets.symmetric(horizontal: 8),
             decoration: BoxDecoration(
-              color: AppColors.gray[400],
+              color: AppColors.secondaryBg,
               borderRadius: BorderRadius.circular(widget.radius),
+              border: Border.all(color: AppColors.mint),
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
-                  height: widget.height,
+                  height: widget.height ?? 50,
                   child: Row(
                     children: [
                       currentVal == null
                           ? Text(
                               widget.hintText ?? "Select One",
-                              style: AppTexts.tsmr.copyWith(
-                                color: AppColors.gray.shade200,
+                              style: AppTexts.tlgm.copyWith(
+                                color: AppColors.secondaryText,
                               ),
                             )
-                          : Text(
-                              currentVal!,
-                              style: AppTexts.tsmr.copyWith(
-                                color: AppColors.gray.shade50,
-                              ),
-                            ),
+                          : Text(currentVal!, style: AppTexts.tlgm),
                       const Spacer(),
                       AnimatedRotation(
                         duration: defaultDuration,
                         turns: isExpanded ? 0.5 : 1,
-                        child: SvgPicture.asset(AppIcons.arrowDown),
+                        child: CustomSvg(
+                          asset: AppIcons.arrowDown,
+                          color: AppColors.mint,
+                          size: 24,
+                        ),
                       ),
                     ],
                   ),
@@ -117,7 +110,7 @@ class _CustomDropDownState extends State<CustomDropDown> {
                                   });
                                 },
                                 child: Container(
-                                  height: widget.height,
+                                  height: widget.height ?? 50,
                                   decoration: BoxDecoration(
                                     border: Border(
                                       top: BorderSide(
@@ -128,13 +121,7 @@ class _CustomDropDownState extends State<CustomDropDown> {
                                   ),
                                   child: Align(
                                     alignment: Alignment.centerLeft,
-                                    child: Text(
-                                      e,
-                                      style: TextStyle(
-                                        color: AppColors.cyan[50],
-                                        fontSize: 14,
-                                      ),
-                                    ),
+                                    child: Text(e, style: AppTexts.tlgm),
                                   ),
                                 ),
                               );

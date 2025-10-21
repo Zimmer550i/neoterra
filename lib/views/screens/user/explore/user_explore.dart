@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:neoterra/models/vibe.dart';
 import 'package:neoterra/utils/app_colors.dart';
+import 'package:neoterra/utils/app_constants.dart';
 import 'package:neoterra/utils/app_texts.dart';
 import 'package:neoterra/utils/custom_svg.dart';
 import 'package:neoterra/utils/show_custom_calendar.dart';
@@ -13,6 +15,8 @@ class UserExplore extends StatefulWidget {
 }
 
 class _UserExploreState extends State<UserExplore> {
+  List<Vibe> selectedVibes = [];
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -58,14 +62,30 @@ class _UserExploreState extends State<UserExplore> {
             child: Row(
               spacing: 16,
               children: [
-                for (int i = 0; i < 10; i++)
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                    decoration: BoxDecoration(
-                      color: AppColors.card,
-                      borderRadius: BorderRadius.circular(4),
+                for (var i in AppConstants.vibes)
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        if (selectedVibes.contains(i)) {
+                          selectedVibes.remove(i);
+                        } else {
+                          selectedVibes.add(i);
+                        }
+                      });
+                    },
+                    child: Container(
+                      padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                      decoration: BoxDecoration(
+                        color: AppColors.card,
+                        borderRadius: BorderRadius.circular(4),
+                        border: Border.all(
+                          color: selectedVibes.contains(i)
+                              ? AppColors.mint
+                              : Colors.transparent,
+                        ),
+                      ),
+                      child: Text("Tag ${i.name}", style: AppTexts.txsm),
                     ),
-                    child: Text("Tag ${i + 1}", style: AppTexts.txsm),
                   ),
               ],
             ),

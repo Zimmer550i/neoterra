@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:neoterra/utils/app_colors.dart';
 import 'package:neoterra/utils/app_texts.dart';
 import 'package:neoterra/utils/custom_svg.dart';
@@ -6,6 +7,8 @@ import 'package:neoterra/views/base/custom_app_bar.dart';
 import 'package:neoterra/views/base/custom_button.dart';
 import 'package:neoterra/views/base/custom_calendar.dart';
 import 'package:neoterra/views/base/profile_picture.dart';
+import 'package:neoterra/views/screens/professional/profile/professional_availability_calendar.dart';
+import 'package:neoterra/views/screens/professional/profile/professional_photos_and_videos.dart';
 
 class ProfessionalProfile extends StatelessWidget {
   final bool isUser;
@@ -137,7 +140,9 @@ class ProfessionalProfile extends StatelessWidget {
 
               const SizedBox(height: 24),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Get.to(() => ProfessionalPhotosAndVideos());
+                },
                 child: Row(
                   children: [
                     Text("Photos & Videos", style: AppTexts.tmds),
@@ -269,8 +274,7 @@ class ProfessionalProfile extends StatelessWidget {
               ),
               const SizedBox(height: 16),
               CustomCalendar(
-                onMultipleSelected: (val) {},
-                onSigleDateSelected: (val) {},
+                onDateSelected: (val) {},
                 selectedDates: [
                   DateTime.now(),
                   DateTime.now().add(Duration(days: 1)),
@@ -282,6 +286,9 @@ class ProfessionalProfile extends StatelessWidget {
               ),
               const SizedBox(height: 24),
               CustomButton(
+                onTap: () {
+                  Get.to(() => ProfessionalAvailabilityCalendar());
+                },
                 text: "Manage Calendar",
                 isSecondary: true,
                 secondaryColor: AppColors.mint,

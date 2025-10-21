@@ -9,7 +9,9 @@ import 'package:neoterra/utils/show_confirmation.dart';
 import 'package:neoterra/views/base/custom_bottom_navbar.dart';
 import 'package:neoterra/views/base/home_bar.dart';
 import 'package:neoterra/views/screens/common/change_role.dart';
+import 'package:neoterra/views/screens/professional/profile/professional_earnings.dart';
 import 'package:neoterra/views/screens/professional/profile/professional_profile.dart';
+import 'package:neoterra/views/screens/professional/profile/professional_profile_information.dart';
 import 'package:neoterra/views/screens/user/profile/user_info.dart';
 
 class ProfessionalApp extends StatefulWidget {
@@ -58,19 +60,23 @@ class _ProfessionalAppState extends State<ProfessionalApp> {
                 ),
                 drawerButton(
                   "assets/icons/customize.svg",
-                  "Customize My Experience",
-                  () {},
+                  "Earnings & Payout",
+                  () {
+                    Get.to(() => ProfessionalEarnings());
+                  },
                 ),
                 drawerButton(
                   "assets/icons/user.svg",
                   "Profile Information",
-                  () {},
+                  () {
+                    Get.to(() => ProfessionalProfileInformation());
+                  },
                 ),
-                drawerButton(
-                  "assets/icons/user.svg",
-                  "Profile Settings",
-                  () {},
-                ),
+                drawerButton("assets/icons/terms.svg", "Booking Policies", () {
+                  Get.to(
+                    () => UserInfo(title: "Booking Policies", data: "data"),
+                  );
+                }),
                 drawerButton("assets/icons/terms.svg", "Terms of Services", () {
                   Get.to(
                     () => UserInfo(title: "Terms of Conditions", data: "data"),
