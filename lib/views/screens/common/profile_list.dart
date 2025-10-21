@@ -4,7 +4,7 @@ import 'package:neoterra/utils/app_colors.dart';
 import 'package:neoterra/utils/custom_svg.dart';
 import 'package:neoterra/views/base/custom_app_bar.dart';
 import 'package:neoterra/views/base/profile_picture.dart';
-import 'package:neoterra/views/screens/common/inbox.dart';
+import 'package:neoterra/views/screens/common/chat.dart';
 import 'package:neoterra/views/screens/user/profile/user_profile.dart';
 
 class ProfileList extends StatelessWidget {
@@ -52,7 +52,7 @@ class ProfileList extends StatelessWidget {
                       Spacer(),
                       InkWell(
                         onTap: () {
-                          Get.to(() => Inbox());
+                          Get.to(() => Chat());
                         },
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),

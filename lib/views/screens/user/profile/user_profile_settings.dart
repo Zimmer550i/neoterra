@@ -3,14 +3,14 @@ import 'package:neoterra/utils/app_colors.dart';
 import 'package:neoterra/views/base/custom_app_bar.dart';
 import 'package:neoterra/views/base/profile_picture.dart';
 
-class ProfileSettings extends StatefulWidget {
-  const ProfileSettings({super.key});
+class UserProfileSettings extends StatefulWidget {
+  const UserProfileSettings({super.key});
 
   @override
-  State<ProfileSettings> createState() => _ProfileSettingsState();
+  State<UserProfileSettings> createState() => _ProfileSettingsState();
 }
 
-class _ProfileSettingsState extends State<ProfileSettings> {
+class _ProfileSettingsState extends State<UserProfileSettings> {
   bool publicProfile = true;
   bool guestList = true;
   bool attending = true;

@@ -1,4 +1,5 @@
 import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:neoterra/models/user.dart';
@@ -7,32 +8,26 @@ import 'package:neoterra/utils/custom_svg.dart';
 import 'package:neoterra/utils/show_confirmation.dart';
 import 'package:neoterra/views/base/custom_bottom_navbar.dart';
 import 'package:neoterra/views/base/home_bar.dart';
-import 'package:neoterra/views/screens/user/explore/user_explore.dart';
-import 'package:neoterra/views/screens/user/home/user_home.dart';
-import 'package:neoterra/views/screens/user/profile/user_profile_settings.dart';
-import 'package:neoterra/views/screens/user/profile/user_info.dart';
-import 'package:neoterra/views/screens/user/profile/user_customize_experience.dart';
-import 'package:neoterra/views/screens/user/profile/user_profile.dart';
-import 'package:neoterra/views/screens/user/profile/user_profile_information.dart';
 import 'package:neoterra/views/screens/common/change_role.dart';
-import 'package:neoterra/views/screens/user/tickets/user_tickets.dart';
+import 'package:neoterra/views/screens/professional/profile/professional_profile.dart';
+import 'package:neoterra/views/screens/user/profile/user_info.dart';
 
-class UserApp extends StatefulWidget {
-  const UserApp({super.key});
+class ProfessionalApp extends StatefulWidget {
+  const ProfessionalApp({super.key});
 
   @override
-  State<UserApp> createState() => _UserAppState();
+  State<ProfessionalApp> createState() => _ProfessionalAppState();
 }
 
-class _UserAppState extends State<UserApp> {
+class _ProfessionalAppState extends State<ProfessionalApp> {
   int index = 0;
 
   List<Widget> pages = [
-    UserHome(),
-    UserExplore(),
-    ChangeRole(role: Role.user),
-    UserTickets(),
-    UserProfile(isUser: true),
+    FlutterLogo(),
+    FlutterLogo(),
+    ChangeRole(role: Role.professional),
+    FlutterLogo(),
+    ProfessionalProfile(isUser: true),
   ];
 
   @override
@@ -42,7 +37,7 @@ class _UserAppState extends State<UserApp> {
       body: pages[min(pages.length - 1, index)],
       bottomNavigationBar: CustomBottomNavbar(
         index: index,
-        role: Role.user,
+        role: Role.professional,
         onChanged: (val) {
           setState(() {
             index = val;
@@ -64,20 +59,18 @@ class _UserAppState extends State<UserApp> {
                 drawerButton(
                   "assets/icons/customize.svg",
                   "Customize My Experience",
-                  () {
-                    Get.to(() => UserCustomizeExperience());
-                  },
+                  () {},
                 ),
                 drawerButton(
                   "assets/icons/user.svg",
                   "Profile Information",
-                  () {
-                    Get.to(() => UserProfileUserInformation());
-                  },
+                  () {},
                 ),
-                drawerButton("assets/icons/user.svg", "Profile Settings", () {
-                  Get.to(() => UserProfileSettings());
-                }),
+                drawerButton(
+                  "assets/icons/user.svg",
+                  "Profile Settings",
+                  () {},
+                ),
                 drawerButton("assets/icons/terms.svg", "Terms of Services", () {
                   Get.to(
                     () => UserInfo(title: "Terms of Conditions", data: "data"),

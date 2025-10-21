@@ -1,16 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:neoterra/models/user.dart';
 import 'package:neoterra/utils/app_colors.dart';
 import 'package:neoterra/utils/app_texts.dart';
 import 'package:neoterra/views/base/custom_button.dart';
+import 'package:neoterra/views/screens/splash/organizer_splash.dart';
+import 'package:neoterra/views/screens/splash/professional_splash.dart';
+import 'package:neoterra/views/screens/splash/user_splash.dart';
 
-class UserChangeRole extends StatefulWidget {
-  const UserChangeRole({super.key});
+class ChangeRole extends StatefulWidget {
+  final Role role;
+  const ChangeRole({super.key, required this.role});
 
   @override
-  State<UserChangeRole> createState() => _UserChangeRoleState();
+  State<ChangeRole> createState() => _ChangeRoleState();
 }
 
-class _UserChangeRoleState extends State<UserChangeRole> {
+class _ChangeRoleState extends State<ChangeRole> {
   int? index;
 
   void onConfirm() {}
@@ -38,30 +44,63 @@ class _UserChangeRoleState extends State<UserChangeRole> {
             spacing: 20,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // card(
-              //   "assets/images/user_splash.jpg",
-              //   "Attendie",
-              //   "View events or purchase tickets",
-              // ),
-              card(
-                "assets/images/organizer_splash.jpg",
-                "Event Organizer",
-                "Host your own events, sell tickets, and build your scene.",
-                0,
-              ),
-              card(
-                "assets/images/professional_splash.jpg",
-                "Event Professional",
-                "Get booked for gigs DJs, hosts, security, bartenders, and more.",
-                1,
-              ),
+              if (widget.role != Role.user)
+                card(
+                  "assets/images/user_splash.jpg",
+                  "Attendie",
+                  "View events or purchase tickets",
+                  0,
+                ),
+              if (widget.role != Role.organizer)
+                card(
+                  "assets/images/organizer_splash.jpg",
+                  "Event Organizer",
+                  "Host your own events, sell tickets, and build your scene.",
+                  widget.role == Role.professional ? 1 : 0,
+                ),
+              if (widget.role != Role.professional)
+                card(
+                  "assets/images/professional_splash.jpg",
+                  "Event Professional",
+                  "Get booked for gigs DJs, hosts, security, bartenders, and more.",
+                  1,
+                ),
             ],
           ),
           Spacer(),
           Visibility(
             visible: index != null,
             replacement: const SizedBox(height: 50),
-            child: CustomButton(text: "Confirm"),
+            child: CustomButton(
+              onTap: () {
+                switch (widget.role) {
+                  case Role.user:
+                    if (index == 0) {
+                      Get.offAll(() => OrganizerSplash());
+                    } else {
+                      Get.offAll(() => ProfessionalSplash());
+                    }
+                    break;
+
+                  case Role.organizer:
+                    if (index == 0) {
+                      Get.offAll(() => UserSplash());
+                    } else {
+                      Get.offAll(() => ProfessionalSplash());
+                    }
+                    break;
+
+                  case Role.professional:
+                    if (index == 0) {
+                      Get.offAll(() => UserSplash());
+                    } else {
+                      Get.offAll(() => OrganizerSplash());
+                    }
+                    break;
+                }
+              },
+              text: "Confirm",
+            ),
           ),
           const SizedBox(height: 20),
         ],

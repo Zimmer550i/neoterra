@@ -5,14 +5,14 @@ import 'package:neoterra/utils/app_texts.dart';
 import 'package:neoterra/utils/custom_svg.dart';
 import 'package:neoterra/views/base/profile_picture.dart';
 
-class Inbox extends StatefulWidget {
-  const Inbox({super.key});
+class Chat extends StatefulWidget {
+  const Chat({super.key});
 
   @override
-  State<Inbox> createState() => _InboxState();
+  State<Chat> createState() => _ChatState();
 }
 
-class _InboxState extends State<Inbox> {
+class _ChatState extends State<Chat> {
   List<Widget> messages = [];
 
   @override

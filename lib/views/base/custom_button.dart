@@ -17,10 +17,12 @@ class CustomButton extends StatefulWidget {
   final double radius;
   final double fontSize;
   final double iconSize;
+  final Color? secondaryColor;
   const CustomButton({
     super.key,
     required this.text,
     this.onTap,
+    this.secondaryColor,
     this.leading,
     this.trailing,
     this.padding = 40,
@@ -56,7 +58,9 @@ class _CustomButtonState extends State<CustomButton> {
               ? AppColors.cyan.shade300
               : AppColors.mint,
           borderRadius: BorderRadius.circular(widget.radius),
-          border: widget.isSecondary ? Border.all(color: AppColors.mint) : null,
+          border: widget.isSecondary
+              ? Border.all(color: widget.secondaryColor ?? AppColors.mint)
+              : null,
         ),
         child: widget.isLoading
             ? FittedBox(
@@ -65,8 +69,8 @@ class _CustomButtonState extends State<CustomButton> {
                   padding: const EdgeInsets.all(8.0),
                   child: CircularProgressIndicator(
                     color: widget.isSecondary
-                        ? AppColors.cyan
-                        : AppColors.cyan[50],
+                        ? AppColors.mint
+                        : AppColors.white,
                     strokeWidth: 4,
                   ),
                 ),
@@ -82,7 +86,9 @@ class _CustomButtonState extends State<CustomButton> {
                       height: widget.iconSize,
                       width: widget.iconSize,
                       colorFilter: ColorFilter.mode(
-                        AppColors.white,
+                        widget.isSecondary
+                            ? widget.secondaryColor ?? AppColors.white
+                            : AppColors.white,
                         BlendMode.srcIn,
                       ),
                     ),
@@ -90,7 +96,9 @@ class _CustomButtonState extends State<CustomButton> {
                     widget.text,
                     style: AppTexts.tlgs.copyWith(
                       fontSize: widget.fontSize,
-                      color: Colors.white,
+                      color: widget.isSecondary
+                          ? widget.secondaryColor ?? AppColors.white
+                          : AppColors.white,
                     ),
                   ),
                   if (widget.trailing != null)
