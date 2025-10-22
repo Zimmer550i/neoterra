@@ -139,7 +139,7 @@ class PartyConfirmation extends StatelessWidget {
                               size: 24,
                             ),
                             const SizedBox(width: 4),
-                            Text("Add to Calender", style: AppTexts.txss),
+                            Text("Add to Calendar", style: AppTexts.txss),
                           ],
                         ),
                       ),

@@ -17,6 +17,7 @@ class UserExplore extends StatefulWidget {
 
 class _UserExploreState extends State<UserExplore> {
   List<Vibe> selectedVibes = [];
+  List<DateTime> selectedDates = [];
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +66,8 @@ class _UserExploreState extends State<UserExplore> {
           Row(
             children: [
               GestureDetector(
-                onTap: () => showCustomCalendar(context, (dates) {}, (date) {}),
+                onTap: () =>
+                    showCustomCalendar(context, selectedDates, (date) {}),
                 child: Container(
                   padding: EdgeInsets.symmetric(vertical: 6, horizontal: 8),
                   decoration: BoxDecoration(
@@ -80,7 +82,7 @@ class _UserExploreState extends State<UserExplore> {
                         color: Colors.white,
                         size: 20,
                       ),
-                      Text("Calender", style: AppTexts.tmdm),
+                      Text("Calendar", style: AppTexts.tmdm),
                     ],
                   ),
                 ),

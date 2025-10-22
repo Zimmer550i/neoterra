@@ -3,11 +3,14 @@ import 'package:get/get.dart';
 import 'package:neoterra/utils/app_colors.dart';
 import 'package:neoterra/utils/app_texts.dart';
 import 'package:neoterra/utils/custom_svg.dart';
+import 'package:neoterra/utils/show_confirmation.dart';
 import 'package:neoterra/views/base/custom_app_bar.dart';
 import 'package:neoterra/views/base/custom_button.dart';
 import 'package:neoterra/views/base/custom_calendar.dart';
 import 'package:neoterra/views/base/profile_picture.dart';
 import 'package:neoterra/views/screens/common/chat.dart';
+import 'package:neoterra/views/screens/professional/bookings/professional_booking_confirmation.dart';
+import 'package:neoterra/views/screens/professional/home/professional_booking_form.dart';
 import 'package:neoterra/views/screens/professional/profile/professional_availability_calendar.dart';
 import 'package:neoterra/views/screens/professional/profile/professional_photos_and_videos.dart';
 
@@ -55,6 +58,49 @@ class ProfessionalProfile extends StatelessWidget {
                   Expanded(
                     flex: 3,
                     child: CustomButton(
+                      onTap: () {
+                        Get.to(
+                          () => ProfessionalBookingForm(
+                            title: "Request Booking",
+                            isEditable: true,
+                            actions: Row(
+                              children: [
+                                Expanded(
+                                  child: CustomButton(
+                                    onTap: () => showConfirmation(
+                                      title: "Cancel",
+                                      description:
+                                          "Do you really want to cancel the process?",
+                                      confirmText: "Yes, do it",
+                                      cancelText: "No",
+                                      onConfirm: () {
+                                        Get.back();
+                                      },
+                                      onCancel: () {},
+                                      context: context,
+                                    ),
+                                    text: "Cancel",
+                                    isSecondary: true,
+                                    secondaryColor: AppColors.coral,
+                                  ),
+                                ),
+                                const SizedBox(width: 16),
+                                Expanded(
+                                  child: CustomButton(
+                                    onTap: () {
+                                      Get.to(
+                                        () => ProfessionalBookingConfirmation(),
+                                      );
+                                    },
+                                    text: "Send Offer",
+                                    secondaryColor: AppColors.coral,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        );
+                      },
                       leading: "assets/icons/tick_circle.svg",
                       text: "Request Booking",
                       padding: 0,
