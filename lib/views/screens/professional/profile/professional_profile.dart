@@ -7,6 +7,7 @@ import 'package:neoterra/views/base/custom_app_bar.dart';
 import 'package:neoterra/views/base/custom_button.dart';
 import 'package:neoterra/views/base/custom_calendar.dart';
 import 'package:neoterra/views/base/profile_picture.dart';
+import 'package:neoterra/views/screens/common/chat.dart';
 import 'package:neoterra/views/screens/professional/profile/professional_availability_calendar.dart';
 import 'package:neoterra/views/screens/professional/profile/professional_photos_and_videos.dart';
 
@@ -64,6 +65,9 @@ class ProfessionalProfile extends StatelessWidget {
                   Expanded(
                     flex: 2,
                     child: CustomButton(
+                      onTap: () {
+                        Get.to(() => Chat());
+                      },
                       leading: "assets/icons/message.svg",
                       text: "Message",
                       padding: 0,

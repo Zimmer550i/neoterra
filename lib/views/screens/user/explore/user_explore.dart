@@ -5,6 +5,7 @@ import 'package:neoterra/utils/app_constants.dart';
 import 'package:neoterra/utils/app_texts.dart';
 import 'package:neoterra/utils/custom_svg.dart';
 import 'package:neoterra/utils/show_custom_calendar.dart';
+import 'package:neoterra/views/base/custom_search_bar.dart';
 import 'package:neoterra/views/base/party_card_compact.dart';
 
 class UserExplore extends StatefulWidget {
@@ -24,37 +25,7 @@ class _UserExploreState extends State<UserExplore> {
       child: Column(
         children: [
           const SizedBox(height: 12),
-          Container(
-            padding: EdgeInsets.all(12),
-            decoration: BoxDecoration(
-              color: AppColors.card.withValues(alpha: 0.8),
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: Row(
-              spacing: 8,
-              children: [
-                CustomSvg(
-                  asset: "assets/icons/search.svg",
-                  color: AppColors.secondaryText.withValues(alpha: 0.8),
-                ),
-                Expanded(
-                  child: TextField(
-                    decoration: InputDecoration(
-                      isDense: true,
-                      isCollapsed: true,
-                      border: InputBorder.none,
-                      hintText: "Search",
-                      hintStyle: AppTexts.tmdm.copyWith(
-                        color: AppColors.secondaryText.withValues(alpha: 0.8),
-                      ),
-                    ),
-                    cursorColor: AppColors.mint,
-                    style: AppTexts.tmdm,
-                  ),
-                ),
-              ],
-            ),
-          ),
+          CustomSearchBar(),
           const SizedBox(height: 16),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
