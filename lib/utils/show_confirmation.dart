@@ -5,10 +5,10 @@ import 'package:neoterra/utils/app_texts.dart';
 void showConfirmation({
   required String title,
   required String description,
-  required String confirmText,
-  required String cancelText,
+  String confirmText = "Yes, do it",
+  String cancelText = "No",
   required VoidCallback onConfirm,
-  required VoidCallback onCancel,
+  VoidCallback? onCancel,
   required BuildContext context,
 }) {
   showModalBottomSheet(
@@ -52,7 +52,9 @@ void showConfirmation({
                       child: InkWell(
                         onTap: () {
                           Navigator.of(context).pop();
-                          onCancel();
+                          if (onCancel != null) {
+                            onCancel();
+                          }
                         },
                         child: Container(
                           padding: EdgeInsets.symmetric(

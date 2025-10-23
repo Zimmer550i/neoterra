@@ -9,7 +9,7 @@ import 'package:neoterra/views/base/custom_button.dart';
 import 'package:neoterra/views/base/custom_calendar.dart';
 import 'package:neoterra/views/base/profile_picture.dart';
 import 'package:neoterra/views/screens/common/chat.dart';
-import 'package:neoterra/views/screens/professional/bookings/professional_booking_confirmation.dart';
+import 'package:neoterra/views/screens/professional/home/professional_booking_confirmation.dart';
 import 'package:neoterra/views/screens/professional/home/professional_booking_form.dart';
 import 'package:neoterra/views/screens/professional/profile/professional_availability_calendar.dart';
 import 'package:neoterra/views/screens/professional/profile/professional_photos_and_videos.dart';
