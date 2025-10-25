@@ -9,8 +9,8 @@ import 'package:neoterra/views/base/custom_button.dart';
 import 'package:neoterra/views/base/profile_picture.dart';
 import 'package:neoterra/views/screens/common/chat.dart';
 
-class ProfessionalBookingConfirmation extends StatelessWidget {
-  const ProfessionalBookingConfirmation({super.key});
+class ProfessionalBookingRequested extends StatelessWidget {
+  const ProfessionalBookingRequested({super.key});
 
   @override
   Widget build(BuildContext context) {

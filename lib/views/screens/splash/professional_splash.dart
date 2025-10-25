@@ -47,7 +47,7 @@ class ProfessionalSplash extends StatelessWidget {
                   const SizedBox(height: 32),
                   CustomButton(
                     onTap: () {
-                      Get.to(() => ProfessionalApp());
+                      Get.to(() => ProfessionalApp(), routeName: "/professional_app");
                     },
                     text: "Get Started",
                     trailing: "assets/icons/arrow_right.svg",

@@ -52,18 +52,26 @@ class _ProfessionalBookingFormState extends State<ProfessionalBookingForm> {
                       spacing: 8,
                       children: [
                         Text("Event: ", style: AppTexts.tlgs),
-                        Expanded(
-                          child: TextField(
-                            decoration: InputDecoration(
-                              isDense: true,
-                              isCollapsed: true,
-                              hintText: "Enter event name",
-                              hintStyle: AppTexts.tsmr.copyWith(
-                                color: AppColors.gray.shade300,
+                        if (!widget.isEditable)
+                          Text(
+                            "Event name here",
+                            style: AppTexts.tsmr.copyWith(
+                              color: AppColors.gray.shade300,
+                            ),
+                          ),
+                        if (widget.isEditable)
+                          Expanded(
+                            child: TextField(
+                              decoration: InputDecoration(
+                                isDense: true,
+                                isCollapsed: true,
+                                hintText: "Enter event name",
+                                hintStyle: AppTexts.tsmr.copyWith(
+                                  color: AppColors.gray.shade300,
+                                ),
                               ),
                             ),
                           ),
-                        ),
                       ],
                     ),
                     Row(
@@ -210,26 +218,42 @@ class _ProfessionalBookingFormState extends State<ProfessionalBookingForm> {
                       spacing: 8,
                       children: [
                         Text("Location: ", style: AppTexts.tlgs),
-                        Expanded(
-                          child: TextField(
-                            decoration: InputDecoration(
-                              isDense: true,
-                              isCollapsed: true,
-                              hintText: "Enter location",
-                              hintStyle: AppTexts.tsmr.copyWith(
-                                color: AppColors.gray.shade300,
+                        if (!widget.isEditable)
+                          Text(
+                            "Event location here",
+                            style: AppTexts.tsmr.copyWith(
+                              color: AppColors.gray.shade300,
+                            ),
+                          ),
+                        if (widget.isEditable)
+                          Expanded(
+                            child: TextField(
+                              decoration: InputDecoration(
+                                isDense: true,
+                                isCollapsed: true,
+                                hintText: "Enter location",
+                                hintStyle: AppTexts.tsmr.copyWith(
+                                  color: AppColors.gray.shade300,
+                                ),
                               ),
                             ),
                           ),
-                        ),
                       ],
                     ),
                     Text("Price: \$800", style: AppTexts.tlgs),
-                    CustomTextField(
-                      lines: 6,
-                      hintText:
-                          "Add any special requests or instructions (optional)",
+                    if (!widget.isEditable)
+                    Text(
+                      "Special instructions about the Event here",
+                      style: AppTexts.tlgr.copyWith(
+                        color: AppColors.secondaryText,
+                      ),
                     ),
+                    if (widget.isEditable)
+                      CustomTextField(
+                        lines: 6,
+                        hintText:
+                            "Add any special requests or instructions (optional)",
+                      ),
                   ],
                 ),
               ),

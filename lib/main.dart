@@ -4,7 +4,7 @@ import 'package:neoterra/utils/message.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:neoterra/views/screens/app/professional_app.dart';
+import 'package:neoterra/views/screens/splash/professional_splash.dart';
 // import 'package:neoterra/views/screens/app/user_app.dart';
 import 'controllers/localization_controller.dart';
 import 'controllers/theme_controller.dart';
@@ -51,7 +51,7 @@ class MyApp extends StatelessWidget {
               transitionDuration: const Duration(milliseconds: 500),
               getPages: AppRoutes.pages,
               // initialRoute: AppRoutes.splash,
-              home: ProfessionalApp(),
+              home: ProfessionalSplash(),
             );
           },
         );

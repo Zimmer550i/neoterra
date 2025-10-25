@@ -3,10 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:neoterra/utils/app_colors.dart';
 import 'package:neoterra/utils/app_texts.dart';
-import 'package:neoterra/utils/show_confirmation.dart';
-import 'package:neoterra/views/base/custom_button.dart';
 import 'package:neoterra/views/base/profile_picture.dart';
-import 'package:neoterra/views/screens/professional/home/professional_booking_form.dart';
+import 'package:neoterra/views/screens/professional/bookings/professional_booking_details.dart';
+import 'package:neoterra/views/screens/professional/bookings/professional_offer_accepted.dart';
 
 class ProfessionalBooking extends StatefulWidget {
   const ProfessionalBooking({super.key});
@@ -109,7 +108,9 @@ class _ProfessionalBookingState extends State<ProfessionalBooking> {
 
   Widget myBookings() {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        Get.to(() => ProfessionalOfferAccepted());
+      },
       child: Row(
         children: [
           ProfilePicture(
@@ -146,83 +147,7 @@ class _ProfessionalBookingState extends State<ProfessionalBooking> {
     var isConfirmed = Random().nextBool();
     return InkWell(
       onTap: () {
-        Get.to(
-          () => isConfirmed
-              ? ProfessionalBookingForm(
-                  title: "Request Booking",
-                  isEditable: true,
-                  actions: Row(
-                    children: [
-                      Expanded(
-                        child: CustomButton(
-                          onTap: () => showConfirmation(
-                            title: "Decline",
-                            description:
-                                "Do you really want to decline the request?",
-                            confirmText: "Yes, do it",
-                            cancelText: "No",
-                            onConfirm: () {
-                              Get.back();
-                            },
-                            onCancel: () {},
-                            context: context,
-                          ),
-                          text: "Decline",
-                          isSecondary: true,
-                          secondaryColor: AppColors.coral,
-                        ),
-                      ),
-                      const SizedBox(width: 16),
-                      Expanded(
-                        child: CustomButton(
-                          onTap: () {
-                            // Get.to(() => ProfessionalBookingConfirmation());
-                          },
-                          text: "Accept",
-                          secondaryColor: AppColors.coral,
-                        ),
-                      ),
-                    ],
-                  ),
-                )
-              : ProfessionalBookingForm(
-                  title: "Request Booking",
-                  isEditable: false,
-                  actions: Row(
-                    children: [
-                      Expanded(
-                        child: CustomButton(
-                          onTap: () => showConfirmation(
-                            title: "Decline",
-                            description:
-                                "Do you really want to decline the request?",
-                            confirmText: "Yes, do it",
-                            cancelText: "No",
-                            onConfirm: () {
-                              Get.back();
-                            },
-                            onCancel: () {},
-                            context: context,
-                          ),
-                          text: "Decline",
-                          isSecondary: true,
-                          secondaryColor: AppColors.coral,
-                        ),
-                      ),
-                      const SizedBox(width: 16),
-                      Expanded(
-                        child: CustomButton(
-                          onTap: () {
-                            // Get.to(() => ProfessionalBookingConfirmation());
-                          },
-                          text: "Accept",
-                          secondaryColor: AppColors.coral,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-        );
+        Get.to(() => ProfessionalBookingDetails(isAccepted: isConfirmed));
       },
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
