@@ -62,7 +62,7 @@ class _CustomDropDownState extends State<CustomDropDown> {
             decoration: BoxDecoration(
               color: AppColors.secondaryBg,
               borderRadius: BorderRadius.circular(widget.radius),
-              border: Border.all(color: AppColors.mint),
+              border: isExpanded ? Border.all(color: AppColors.mint) : null,
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -74,11 +74,16 @@ class _CustomDropDownState extends State<CustomDropDown> {
                       currentVal == null
                           ? Text(
                               widget.hintText ?? "Select One",
-                              style: AppTexts.tlgm.copyWith(
+                              style: AppTexts.tmdr.copyWith(
                                 color: AppColors.secondaryText,
                               ),
                             )
-                          : Text(currentVal!, style: AppTexts.tlgm),
+                          : Text(
+                              currentVal!,
+                              style: AppTexts.tlgm.copyWith(
+                                color: AppColors.mint,
+                              ),
+                            ),
                       const Spacer(),
                       AnimatedRotation(
                         duration: defaultDuration,

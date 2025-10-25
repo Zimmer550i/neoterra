@@ -75,11 +75,6 @@ class _OrganizerAppState extends State<OrganizerApp> {
                     Get.to(() => OrganizerProfileInformation());
                   },
                 ),
-                drawerButton("assets/icons/terms.svg", "Booking Policies", () {
-                  Get.to(
-                    () => UserInfo(title: "Booking Policies", data: "data"),
-                  );
-                }),
                 drawerButton("assets/icons/terms.svg", "Terms of Services", () {
                   Get.to(
                     () => UserInfo(title: "Terms of Conditions", data: "data"),

@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:neoterra/utils/app_colors.dart';
 import 'package:neoterra/utils/app_constants.dart';
 import 'package:neoterra/utils/app_texts.dart';
 import 'package:neoterra/views/base/custom_app_bar.dart';
 import 'package:neoterra/views/base/custom_button.dart';
+import 'package:neoterra/views/screens/common/story_viewer.dart';
+import 'package:neoterra/views/screens/organizer/profile/organizer_add_story.dart';
 
 class OrganizerManageStory extends StatelessWidget {
   const OrganizerManageStory({super.key});
@@ -32,25 +35,33 @@ class OrganizerManageStory extends StatelessWidget {
                   for (var i in AppConstants.vibes)
                     SizedBox(
                       width: 76,
-                      child: Column(
-                        children: [
-                          Container(
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              border: Border.all(color: AppColors.mint),
+                      child: GestureDetector(
+                        onTap: () {
+                          Get.to(() => StoryViewer());
+                        },
+                        child: Column(
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                border: Border.all(color: AppColors.mint),
+                              ),
+                              child: ClipRRect(
+                                borderRadius: BorderRadiusGeometry.circular(99),
+                                child: Image.asset(i.iconImage),
+                              ),
                             ),
-                            child: ClipRRect(
-                              borderRadius: BorderRadiusGeometry.circular(99),
-                              child: Image.asset(i.iconImage),
+                            const SizedBox(height: 4),
+                            Text(
+                              i.name,
+                              maxLines: 2,
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.white,
+                              ),
                             ),
-                          ),
-                          const SizedBox(height: 4),
-                          Text(
-                            i.name,
-                            maxLines: 2,
-                            style: TextStyle(fontSize: 16, color: Colors.white),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                 ],
@@ -79,7 +90,7 @@ class OrganizerManageStory extends StatelessWidget {
             const SizedBox(height: 32),
             CustomButton(
               onTap: () {
-                
+                Get.to(() => OrganizerAddStory());
               },
               text: "Add Story",
               leading: "assets/icons/plus.svg",
