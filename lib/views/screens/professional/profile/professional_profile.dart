@@ -128,7 +128,7 @@ class ProfessionalProfile extends StatelessWidget {
                 alignment: Alignment.centerLeft,
                 child: Text(
                   "About",
-                  style: AppTexts.tlgs.copyWith(color: AppColors.mint),
+                  style: AppTexts.tlgs,
                 ),
               ),
               const SizedBox(height: 4),
