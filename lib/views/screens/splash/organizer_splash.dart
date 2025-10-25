@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:neoterra/utils/app_texts.dart';
 import 'package:neoterra/views/base/custom_button.dart';
+import 'package:neoterra/views/screens/app/organizer_app.dart';
 
 class OrganizerSplash extends StatelessWidget {
   const OrganizerSplash({super.key});
@@ -44,6 +46,9 @@ class OrganizerSplash extends StatelessWidget {
                   ),
                   const SizedBox(height: 32),
                   CustomButton(
+                    onTap: () {
+                      Get.to(() => OrganizerApp());
+                    },
                     text: "Get Started",
                     trailing: "assets/icons/arrow_right.svg",
                   ),

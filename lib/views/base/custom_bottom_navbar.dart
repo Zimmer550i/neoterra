@@ -17,6 +17,33 @@ class CustomBottomNavbar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var organizerItems = [
+      BottomNavigationBarItem(
+        icon: CustomSvg(asset: "assets/icons/dashboard.svg"),
+        activeIcon: CustomSvg(asset: "assets/icons/dashboard_active.svg"),
+        label: "Dashboard",
+      ),
+      BottomNavigationBarItem(
+        icon: CustomSvg(asset: "assets/icons/graph.svg"),
+        activeIcon: CustomSvg(asset: "assets/icons/graph_active.svg"),
+        label: "Analytics",
+      ),
+      BottomNavigationBarItem(
+        icon: CustomSvg(asset: "assets/icons/role_switch.svg"),
+        activeIcon: CustomSvg(asset: "assets/icons/role_switch_active.svg"),
+        label: "",
+      ),
+      BottomNavigationBarItem(
+        icon: CustomSvg(asset: "assets/icons/events.svg"),
+        activeIcon: CustomSvg(asset: "assets/icons/events_active.svg"),
+        label: "Events",
+      ),
+      BottomNavigationBarItem(
+        icon: CustomSvg(asset: "assets/icons/profile.svg"),
+        activeIcon: CustomSvg(asset: "assets/icons/profile_active.svg"),
+        label: "Profile",
+      ),
+    ];
     var professionalItems = [
       BottomNavigationBarItem(
         icon: CustomSvg(asset: "assets/icons/home.svg"),
@@ -44,7 +71,7 @@ class CustomBottomNavbar extends StatelessWidget {
         label: "Profile",
       ),
     ];
-    
+
     var userItems = [
       BottomNavigationBarItem(
         icon: CustomSvg(asset: "assets/icons/home.svg"),
@@ -84,7 +111,7 @@ class CustomBottomNavbar extends StatelessWidget {
             ? userItems
             : role == Role.professional
             ? professionalItems
-            : [],
+            : organizerItems,
       ),
     );
   }
