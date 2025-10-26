@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:neoterra/models/user.dart';
@@ -11,9 +10,9 @@ import 'package:neoterra/views/base/home_bar.dart';
 import 'package:neoterra/views/screens/common/change_role.dart';
 import 'package:neoterra/views/screens/common/inbox.dart';
 import 'package:neoterra/views/screens/organizer/analytics/organizer_analytics.dart';
+import 'package:neoterra/views/screens/organizer/dashboard/organizer_dashboard.dart';
 import 'package:neoterra/views/screens/organizer/profile/organizer_profile.dart';
 import 'package:neoterra/views/screens/organizer/profile/organizer_profile_information.dart';
-import 'package:neoterra/views/screens/professional/home/professional_home.dart';
 import 'package:neoterra/views/screens/professional/profile/professional_earnings.dart';
 import 'package:neoterra/views/screens/user/profile/user_info.dart';
 
@@ -28,7 +27,7 @@ class _OrganizerAppState extends State<OrganizerApp> {
   int index = 0;
 
   List<Widget> pages = [
-    ProfessionalHome(),
+    OrganizerDashboard(),
     OrganizerAnalytics(),
     ChangeRole(role: Role.organizer),
     Inbox(),

@@ -17,12 +17,12 @@ class CustomButton extends StatefulWidget {
   final double radius;
   final double fontSize;
   final double iconSize;
-  final Color? secondaryColor;
+  final Color? color;
   const CustomButton({
     super.key,
     required this.text,
     this.onTap,
-    this.secondaryColor,
+    this.color,
     this.leading,
     this.trailing,
     this.padding = 40,
@@ -56,10 +56,10 @@ class _CustomButtonState extends State<CustomButton> {
               ? null
               : widget.isDisabled
               ? AppColors.cyan.shade300
-              : AppColors.mint,
+              : widget.color ?? AppColors.mint,
           borderRadius: BorderRadius.circular(widget.radius),
           border: widget.isSecondary
-              ? Border.all(color: widget.secondaryColor ?? AppColors.mint)
+              ? Border.all(color: widget.color ?? AppColors.mint)
               : null,
         ),
         child: widget.isLoading
@@ -87,7 +87,7 @@ class _CustomButtonState extends State<CustomButton> {
                       width: widget.iconSize,
                       colorFilter: ColorFilter.mode(
                         widget.isSecondary
-                            ? widget.secondaryColor ?? AppColors.white
+                            ? widget.color ?? AppColors.white
                             : AppColors.white,
                         BlendMode.srcIn,
                       ),
@@ -97,7 +97,7 @@ class _CustomButtonState extends State<CustomButton> {
                     style: AppTexts.tlgs.copyWith(
                       fontSize: widget.fontSize,
                       color: widget.isSecondary
-                          ? widget.secondaryColor ?? AppColors.white
+                          ? widget.color ?? AppColors.white
                           : AppColors.white,
                     ),
                   ),

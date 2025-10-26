@@ -35,7 +35,7 @@ class ProfessionalBookingDetails extends StatelessWidget {
                     ),
                     text: "Cancel",
                     isSecondary: true,
-                    secondaryColor: AppColors.coral,
+                    color: AppColors.coral,
                   )
                 : CustomButton(
                     onTap: () => showConfirmation(
@@ -51,7 +51,7 @@ class ProfessionalBookingDetails extends StatelessWidget {
                     ),
                     text: "Decline",
                     isSecondary: true,
-                    secondaryColor: AppColors.coral,
+                    color: AppColors.coral,
                   ),
           ),
           const SizedBox(width: 16),
@@ -63,7 +63,7 @@ class ProfessionalBookingDetails extends StatelessWidget {
                     },
                     text: "Message",
                     isSecondary: true,
-                    secondaryColor: AppColors.mint,
+                    color: AppColors.mint,
                   )
                 : CustomButton(
                     onTap: () {
@@ -78,7 +78,7 @@ class ProfessionalBookingDetails extends StatelessWidget {
                       );
                     },
                     text: "Accept",
-                    secondaryColor: AppColors.coral,
+                    color: AppColors.coral,
                   ),
           ),
         ],

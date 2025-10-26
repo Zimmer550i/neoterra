@@ -111,7 +111,7 @@ class ProfessionalBookingRequested extends StatelessWidget {
                       text: "Modify Request",
                       padding: 0,
                       isSecondary: true,
-                      secondaryColor: AppColors.coral,
+                      color: AppColors.coral,
                     ),
                   ),
                   Expanded(

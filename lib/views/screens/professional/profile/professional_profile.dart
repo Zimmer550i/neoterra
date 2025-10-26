@@ -81,7 +81,7 @@ class ProfessionalProfile extends StatelessWidget {
                                     ),
                                     text: "Cancel",
                                     isSecondary: true,
-                                    secondaryColor: AppColors.coral,
+                                    color: AppColors.coral,
                                   ),
                                 ),
                                 const SizedBox(width: 16),
@@ -93,7 +93,7 @@ class ProfessionalProfile extends StatelessWidget {
                                       );
                                     },
                                     text: "Send Offer",
-                                    secondaryColor: AppColors.coral,
+                                    color: AppColors.coral,
                                   ),
                                 ),
                               ],
@@ -105,7 +105,7 @@ class ProfessionalProfile extends StatelessWidget {
                       text: "Request Booking",
                       padding: 0,
                       isSecondary: true,
-                      secondaryColor: AppColors.mint,
+                      color: AppColors.mint,
                     ),
                   ),
                   Expanded(
@@ -118,7 +118,7 @@ class ProfessionalProfile extends StatelessWidget {
                       text: "Message",
                       padding: 0,
                       isSecondary: true,
-                      secondaryColor: AppColors.coral,
+                      color: AppColors.coral,
                     ),
                   ),
                 ],
@@ -126,10 +126,7 @@ class ProfessionalProfile extends StatelessWidget {
               const SizedBox(height: 24),
               Align(
                 alignment: Alignment.centerLeft,
-                child: Text(
-                  "About",
-                  style: AppTexts.tlgs,
-                ),
+                child: Text("About", style: AppTexts.tlgs),
               ),
               const SizedBox(height: 4),
               Text(
@@ -341,7 +338,7 @@ class ProfessionalProfile extends StatelessWidget {
                 },
                 text: "Manage Calendar",
                 isSecondary: true,
-                secondaryColor: AppColors.mint,
+                color: AppColors.mint,
                 width: null,
               ),
               const SizedBox(height: 24),

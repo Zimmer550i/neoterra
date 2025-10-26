@@ -8,7 +8,8 @@ import 'package:neoterra/views/screens/common/party_details.dart';
 
 class PartyCard extends StatelessWidget {
   final int seed;
-  const PartyCard({super.key, required this.seed});
+  final double radius;
+  const PartyCard({super.key, required this.seed, this.radius = 24});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,7 @@ class PartyCard extends StatelessWidget {
         Get.to(() => PartyDetails());
       },
       child: ClipRRect(
-        borderRadius: BorderRadiusGeometry.circular(24),
+        borderRadius: BorderRadiusGeometry.circular(radius),
         child: Container(
           decoration: BoxDecoration(color: AppColors.card),
           child: Column(
