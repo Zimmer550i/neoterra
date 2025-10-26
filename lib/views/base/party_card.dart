@@ -5,17 +5,28 @@ import 'package:neoterra/utils/app_texts.dart';
 import 'package:neoterra/utils/custom_svg.dart';
 import 'package:neoterra/views/base/custom_networked_image.dart';
 import 'package:neoterra/views/screens/common/party_details.dart';
+import 'package:neoterra/views/screens/organizer/management/organizer_management.dart';
 
 class PartyCard extends StatelessWidget {
   final int seed;
   final double radius;
-  const PartyCard({super.key, required this.seed, this.radius = 24});
+  final bool isHost;
+  const PartyCard({
+    super.key,
+    required this.seed,
+    this.radius = 24,
+    this.isHost = false,
+  });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Get.to(() => PartyDetails());
+        if (isHost) {
+          Get.to(() => OrganizerManagement());
+        } else {
+          Get.to(() => PartyDetails());
+        }
       },
       child: ClipRRect(
         borderRadius: BorderRadiusGeometry.circular(radius),

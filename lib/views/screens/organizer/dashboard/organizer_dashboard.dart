@@ -26,7 +26,7 @@ class OrganizerDashboard extends StatelessWidget {
             },
             child: Row(
               children: [
-                Text("Events", style: AppTexts.tmds),
+                Text("Your Events", style: AppTexts.tmds),
                 Spacer(),
                 Text(
                   "See All",
@@ -50,7 +50,7 @@ class OrganizerDashboard extends StatelessWidget {
                 for (int i = 0; i < 5; i++)
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.6,
-                    child: PartyCard(seed: i, radius: 12),
+                    child: PartyCard(seed: i, radius: 12, isHost: true),
                   ),
               ],
             ),

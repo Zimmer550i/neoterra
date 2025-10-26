@@ -106,118 +106,60 @@ class PartyDetails extends StatelessWidget {
                               ],
                             ),
                             const SizedBox(height: 20),
-                            Column(
-                              spacing: 20,
-                              children: [
-                                Row(
-                                  children: [
-                                    Text(
-                                      "Total Earnings",
-                                      style: AppTexts.tmdm,
-                                    ),
-                                    Spacer(),
-                                    Text(
-                                      "\$5000",
-                                      style: AppTexts.txls.copyWith(
-                                        color: AppColors.mint,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                Row(
-                                  children: [
-                                    Text("Ticket Sold", style: AppTexts.tmdm),
-                                    Spacer(),
-                                    Container(
-                                      padding: EdgeInsets.symmetric(
-                                        vertical: 6,
-                                        horizontal: 8,
-                                      ),
-                                      decoration: BoxDecoration(
-                                        color: AppColors.coral,
-                                        borderRadius: BorderRadius.circular(
-                                          999,
-                                        ),
-                                      ),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.min,
-                                        spacing: 4,
-                                        children: [
-                                          Text("10 / 40", style: AppTexts.tmdm),
-                                          Text("tickets", style: AppTexts.txsm),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                Row(
-                                  children: [
-                                    Text("Ticket Price", style: AppTexts.tmdm),
-                                    Spacer(),
-                                    Text(
-                                      "\$150",
-                                      style: AppTexts.txls.copyWith(
-                                        color: AppColors.mint,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                GestureDetector(
-                                  behavior: HitTestBehavior.translucent,
-                                  onTap: () {
-                                    Get.to(
-                                      () => ProfileList(
-                                        title: "Guest List",
-                                        callBack: () async {
-                                          await Future.delayed(
-                                            Duration(seconds: 2),
-                                          );
-                                        },
-                                      ),
-                                    );
-                                  },
-                                  child: Row(
-                                    children: [
-                                      Text("Guest List", style: AppTexts.tmdm),
-                                      Spacer(),
-                                      SizedBox(
-                                        width: 24 + (16 * 5) + 2,
-                                        height: 26,
-                                        child: Stack(
-                                          children: [
-                                            for (int i = 1; i < 6; i++)
-                                              Positioned(
-                                                left: (16 * i).toDouble(),
-                                                child: ProfilePicture(
-                                                  image:
-                                                      "https://thispersondoesnotexist.com",
-                                                  size: 24,
-                                                  borderColor: Colors.white,
-                                                ),
-                                              ),
-                                          ],
-                                        ),
-                                      ),
-                                      const SizedBox(width: 4),
-                                      Text(
-                                        "+5",
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 12,
-                                        ),
-                                      ),
-                                      const SizedBox(width: 8),
-                                      Text(
-                                        "See all",
-                                        style: AppTexts.txss.copyWith(
-                                          color: AppColors.mint,
-                                        ),
-                                      ),
-                                    ],
+                            GestureDetector(
+                              behavior: HitTestBehavior.translucent,
+                              onTap: () {
+                                Get.to(
+                                  () => ProfileList(
+                                    title: "Guest List",
+                                    callBack: () async {
+                                      await Future.delayed(
+                                        Duration(seconds: 2),
+                                      );
+                                    },
                                   ),
-                                ),
-                              ],
+                                );
+                              },
+                              child: Row(
+                                children: [
+                                  Text("Guest List", style: AppTexts.tmdm),
+                                  Spacer(),
+                                  SizedBox(
+                                    width: 24 + (16 * 5) + 2,
+                                    height: 26,
+                                    child: Stack(
+                                      children: [
+                                        for (int i = 1; i < 6; i++)
+                                          Positioned(
+                                            left: (16 * i).toDouble(),
+                                            child: ProfilePicture(
+                                              image:
+                                                  "https://thispersondoesnotexist.com",
+                                              size: 24,
+                                              borderColor: Colors.white,
+                                            ),
+                                          ),
+                                      ],
+                                    ),
+                                  ),
+                                  const SizedBox(width: 4),
+                                  Text(
+                                    "+5",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 12,
+                                    ),
+                                  ),
+                                  const SizedBox(width: 8),
+                                  Text(
+                                    "See all",
+                                    style: AppTexts.txss.copyWith(
+                                      color: AppColors.mint,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                             const SizedBox(height: 20),
 

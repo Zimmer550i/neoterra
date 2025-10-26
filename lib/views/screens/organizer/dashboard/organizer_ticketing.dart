@@ -8,7 +8,8 @@ import 'package:neoterra/views/base/custom_button.dart';
 import 'package:neoterra/views/screens/organizer/dashboard/organizer_create_party.dart';
 
 class OrganizerTicketing extends StatefulWidget {
-  const OrganizerTicketing({super.key});
+  final bool forward;
+  const OrganizerTicketing({super.key, this.forward = true});
 
   @override
   State<OrganizerTicketing> createState() => _OrganizerTicketingState();
@@ -35,6 +36,7 @@ class _OrganizerTicketingState extends State<OrganizerTicketing> {
               const SizedBox(height: 24),
               GestureDetector(
                 onTap: () {
+                  if (!widget.forward) return;
                   setState(() {
                     if (neo) {
                       neo = false;
@@ -78,6 +80,7 @@ class _OrganizerTicketingState extends State<OrganizerTicketing> {
               const SizedBox(height: 16),
               GestureDetector(
                 onTap: () {
+                  if (!widget.forward) return;
                   setState(() {
                     if (ext) {
                       ext = false;
@@ -119,12 +122,14 @@ class _OrganizerTicketingState extends State<OrganizerTicketing> {
                 ),
               ),
               Spacer(),
-              CustomButton(
-                onTap: () {
-                  Get.to(() => OrganizerCreateParty());
-                },
-                text: "Confirm",
-              ),
+
+              if (widget.forward)
+                CustomButton(
+                  onTap: () {
+                    Get.to(() => OrganizerCreateParty());
+                  },
+                  text: "Confirm",
+                ),
               const SizedBox(height: 24),
             ],
           ),

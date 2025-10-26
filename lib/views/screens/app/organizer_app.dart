@@ -8,12 +8,12 @@ import 'package:neoterra/utils/show_confirmation.dart';
 import 'package:neoterra/views/base/custom_bottom_navbar.dart';
 import 'package:neoterra/views/base/home_bar.dart';
 import 'package:neoterra/views/screens/common/change_role.dart';
-import 'package:neoterra/views/screens/common/inbox.dart';
 import 'package:neoterra/views/screens/organizer/analytics/organizer_analytics.dart';
 import 'package:neoterra/views/screens/organizer/dashboard/organizer_dashboard.dart';
 import 'package:neoterra/views/screens/organizer/profile/organizer_profile.dart';
 import 'package:neoterra/views/screens/organizer/profile/organizer_profile_information.dart';
 import 'package:neoterra/views/screens/professional/profile/professional_earnings.dart';
+import 'package:neoterra/views/screens/user/explore/user_explore.dart';
 import 'package:neoterra/views/screens/user/profile/user_info.dart';
 
 class OrganizerApp extends StatefulWidget {
@@ -30,7 +30,7 @@ class _OrganizerAppState extends State<OrganizerApp> {
     OrganizerDashboard(),
     OrganizerAnalytics(),
     ChangeRole(role: Role.organizer),
-    Inbox(),
+    UserExplore(),
     OrganizerProfile(isUser: true),
   ];
 

@@ -66,8 +66,15 @@ class _UserExploreState extends State<UserExplore> {
           Row(
             children: [
               GestureDetector(
-                onTap: () =>
-                    showCustomCalendar(context, selectedDates, (date) {}),
+                onTap: () => showCustomCalendar(context, selectedDates, (date) {
+                  setState(() {
+                    if (selectedDates.contains(date)) {
+                      selectedDates.remove(date);
+                    } else {
+                      selectedDates.add(date);
+                    }
+                  });
+                }),
                 child: Container(
                   padding: EdgeInsets.symmetric(vertical: 6, horizontal: 8),
                   decoration: BoxDecoration(

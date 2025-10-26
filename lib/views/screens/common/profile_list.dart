@@ -22,47 +22,50 @@ class ProfileList extends StatelessWidget {
         backgroundColor: AppColors.card,
         child: SingleChildScrollView(
           padding: EdgeInsets.symmetric(horizontal: 20),
-          child: Column(
-            spacing: 20,
-            children: [
-              const SizedBox(),
-              for (int i = 0; i < 20; i++)
-                GestureDetector(
-                  behavior: HitTestBehavior.translucent,
-                  onTap: () {
-                    Get.to(() => UserProfile());
-                  },
-                  child: Row(
-                    children: [
-                      ProfilePicture(
-                        size: 50,
-                        disableGesture: true,
-                        borderColor: AppColors.mint,
-                        image: "https://thispersondoesnotexist.com",
-                      ),
-                      const SizedBox(width: 16),
-                      Text(
-                        "Profile Name",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 18,
-                          color: Colors.white,
+          child: SafeArea(
+            child: Column(
+              spacing: 20,
+              children: [
+                const SizedBox(),
+                for (int i = 0; i < 20; i++)
+                  GestureDetector(
+                    behavior: HitTestBehavior.translucent,
+                    onTap: () {
+                      Get.to(() => UserProfile());
+                    },
+                    child: Row(
+                      children: [
+                        ProfilePicture(
+                          size: 50,
+                          disableGesture: true,
+                          borderColor: AppColors.mint,
+                          image: "https://thispersondoesnotexist.com",
                         ),
-                      ),
-                      Spacer(),
-                      InkWell(
-                        onTap: () {
-                          Get.to(() => Chat());
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: CustomSvg(asset: "assets/icons/message.svg"),
+                        const SizedBox(width: 16),
+                        Text(
+                          "Profile Name",
+                          style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 18,
+                            color: Colors.white,
+                          ),
                         ),
-                      ),
-                    ],
+                        Spacer(),
+                        InkWell(
+                          onTap: () {
+                            Get.to(() => Chat());
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: CustomSvg(asset: "assets/icons/message.svg"),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-            ],
+                const SizedBox(),
+              ],
+            ),
           ),
         ),
       ),
