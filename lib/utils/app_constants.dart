@@ -1,6 +1,9 @@
 // ignore_for_file: non_constant_identifier_names, constant_identifier_names
 
+import 'dart:ui';
+
 import 'package:neoterra/models/vibe.dart';
+import 'package:neoterra/utils/app_colors.dart';
 
 import '../models/language_model.dart';
 
@@ -40,36 +43,42 @@ class AppConstants {
       description: "Rap• Trap• Dance",
       coverImage: "assets/images/hiphop.jpg",
       iconImage: "assets/images/hiphop_logo.png",
+      color: AppColors.coral,
     ),
     Vibe(
       name: "R&B",
       description: "Contemporary R&B",
       coverImage: "assets/images/rnb.jpg",
       iconImage: "assets/images/rnb_logo.png",
+      color: Color(0xff9A7AA0),
     ),
     Vibe(
       name: "Global Sounds",
       description: "Reggaetón •Salsa/Bachata • Baile",
       coverImage: "assets/images/globalsounds.jpg",
       iconImage: "assets/images/globalsounds_logo.png",
+      color: AppColors.mint,
     ),
     Vibe(
       name: "Inclusive Events",
       description: "LGBTQ+ events • Trans & Non-Binary",
       coverImage: "assets/images/inclusiveevents.jpg",
       iconImage: "assets/images/inclusiveevents_logo.png",
+      color: Color(0xffFF4D4D),
     ),
     Vibe(
       name: "House & Dance",
       description: "Deep • Soulful • Tech • Disco",
       coverImage: "assets/images/housendance.jpg",
       iconImage: "assets/images/housendance_logo.png",
+      color: Color(0xff03A88D),
     ),
     Vibe(
       name: "Day Parties & Social Vibes",
       description: "Brunch • Rooftop • Pool • Open-Air",
       coverImage: "assets/images/daypartiesnsocialvibes.jpg",
       iconImage: "assets/images/daypartiesnsocialvibes_logo.png",
+      color: AppColors.coral,
     ),
     Vibe(
       name: "Culture, Creativity & Community",
@@ -77,6 +86,7 @@ class AppConstants {
           "Mixers • Poetry • Film • Art • Comedy •Fashion •Cultural Markets",
       coverImage: "assets/images/culturecreativityncommunity.jpg",
       iconImage: "assets/images/culturecreativityncommunity_logo.png",
+      color: AppColors.cyan.shade900,
     ),
     Vibe(
       name: "Wellness",
@@ -84,6 +94,7 @@ class AppConstants {
           "Movement & Fitness • Mind & Soul •Healing •Nature & Outdoor",
       coverImage: "assets/images/wellness.jpg",
       iconImage: "assets/images/wellness_logo.png",
+      color: Color(0xff9A7AA0),
     ),
   ];
 }

@@ -6,6 +6,7 @@ import 'package:neoterra/utils/custom_svg.dart';
 import 'package:neoterra/views/base/custom_button.dart';
 import 'package:neoterra/views/base/party_card.dart';
 import 'package:neoterra/views/screens/organizer/dashboard/organizer_party_list.dart';
+import 'package:neoterra/views/screens/organizer/dashboard/organizer_ticketing.dart';
 import 'package:neoterra/views/screens/organizer/profile/organizer_add_story.dart';
 import 'package:neoterra/views/screens/organizer/profile/organizer_manage_story.dart';
 
@@ -56,7 +57,9 @@ class OrganizerDashboard extends StatelessWidget {
           ),
           const SizedBox(height: 24),
           CustomButton(
-            onTap: () {},
+            onTap: () {
+              Get.to(() => OrganizerTicketing());
+            },
             text: "Create New Event",
             leading: "assets/icons/plus.svg",
           ),

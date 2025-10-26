@@ -126,9 +126,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
                         focusNode.unfocus();
                       });
                     },
-                    style: AppTexts.tsmr.copyWith(
-                      color: AppColors.gray.shade100,
-                    ),
+                    style: AppTexts.tmdr,
                     decoration: InputDecoration(
                       border: InputBorder.none,
                       isDense: true,

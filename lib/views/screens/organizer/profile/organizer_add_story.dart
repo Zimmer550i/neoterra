@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:neoterra/utils/app_colors.dart';
 import 'package:neoterra/utils/app_constants.dart';
 import 'package:neoterra/utils/app_texts.dart';
-import 'package:neoterra/utils/custom_svg.dart';
 import 'package:neoterra/views/base/custom_app_bar.dart';
 import 'package:neoterra/views/base/custom_button.dart';
 import 'package:neoterra/views/base/custom_drop_down.dart';
+import 'package:neoterra/views/base/image_picker_widget.dart';
 
 class OrganizerAddStory extends StatelessWidget {
   const OrganizerAddStory({super.key});
@@ -40,67 +39,7 @@ class OrganizerAddStory extends StatelessWidget {
                 child: Text("Image", style: AppTexts.tlgs),
               ),
               const SizedBox(height: 8),
-              AspectRatio(
-                aspectRatio: 2,
-                child: Container(
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: AppColors.card,
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: InkWell(
-                          onTap: () {},
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              CustomSvg(
-                                asset: "assets/icons/upload.svg",
-                                color: AppColors.mint,
-                                size: 36,
-                              ),
-                              Text(
-                                "Select file",
-                                style: AppTexts.tmdr.copyWith(
-                                  color: AppColors.secondaryText,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Container(
-                        height: 100,
-                        width: 1,
-                        color: AppColors.secondaryText,
-                      ),
-                      Expanded(
-                        child: InkWell(
-                          onTap: () {},
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              CustomSvg(
-                                asset: "assets/icons/camera.svg",
-                                color: AppColors.mint,
-                                size: 36,
-                              ),
-                              Text(
-                                "Capture",
-                                style: AppTexts.tmdr.copyWith(
-                                  color: AppColors.secondaryText,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+              ImagePickerWidget(),
               const SizedBox(height: 32),
               CustomButton(
                 onTap: () {
