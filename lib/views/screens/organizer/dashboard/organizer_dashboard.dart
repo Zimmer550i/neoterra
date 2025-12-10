@@ -92,7 +92,7 @@ class OrganizerDashboard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Ticket Sells",
+                      "Total Ticket Sells",
                       style: AppTexts.tsmr.copyWith(
                         color: AppColors.secondaryText,
                       ),

@@ -15,6 +15,7 @@ class OrganizerProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // TODO: Booking policies will be editable
     return Scaffold(
       appBar: isUser ? null : CustomAppBar(title: "View Profile"),
       body: SingleChildScrollView(

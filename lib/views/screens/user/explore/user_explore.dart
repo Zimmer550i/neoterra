@@ -56,7 +56,7 @@ class _UserExploreState extends State<UserExplore> {
                               : Colors.transparent,
                         ),
                       ),
-                      child: Text("Tag ${i.name}", style: AppTexts.txsm),
+                      child: Text(i.name, style: AppTexts.txsm),
                     ),
                   ),
               ],
